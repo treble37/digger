@@ -7,8 +7,26 @@ defmodule Nested.Mixfile do
       version: "0.1.0",
       elixir: ">= 1.3.0",
       start_permanent: Mix.env == :prod,
+      description: description(),
+      package: package(),
       deps: deps()
     ]
+  end
+
+  defp package do
+    [
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["Bruce Park"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/treble37/nested"}
+    ]
+  end
+
+  defp description do
+    """
+    A collection of helpers to operate on nested maps. See README for the complete list of helpers.
+    The test suite is also helpful.
+    """
   end
 
   # Run "mix help compile.app" to learn about applications.
