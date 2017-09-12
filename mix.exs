@@ -1,9 +1,9 @@
-defmodule Nested.Mixfile do
+defmodule Digger.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :nested,
+      app: :digger,
       version: "0.1.0",
       elixir: ">= 1.3.0",
       start_permanent: Mix.env == :prod,
@@ -18,7 +18,7 @@ defmodule Nested.Mixfile do
       files: ["lib", "mix.exs", "README*", "LICENSE*"],
       maintainers: ["Bruce Park"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/treble37/nested"}
+      links: %{"GitHub" => "https://github.com/treble37/digger"}
     ]
   end
 

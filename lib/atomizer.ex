@@ -1,6 +1,6 @@
-defmodule Nested.Atomizer do
+defmodule Digger.Atomizer do
   @moduledoc """
-  Documentation for NestedAtomizer.
+  Documentation for DiggerAtomizer.
   """
 
   def atomize(map = %{}) do
