@@ -1,4 +1,4 @@
-defmodule NestedAtomizer do
+defmodule Nested.Atomizer do
   @moduledoc """
   Documentation for NestedAtomizer.
   """

@@ -1,9 +1,9 @@
-defmodule NestedAtomizer.Mixfile do
+defmodule Nested.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :nested_atomizer,
+      app: :nested,
       version: "0.1.0",
       elixir: ">= 1.3.0",
       start_permanent: Mix.env == :prod,

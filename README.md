@@ -1,10 +1,20 @@
-# NestedAtomizer
+# Nested
 
-## The Problem
+## Description
+
+Nested is a collection of helpers to help you operate on nested maps (it will also work on non-nested maps). Elixir gives you a great collection of map methods, but sometimes I find myself having to rewrite the same operations specifically for nested maps.
+
+This library is intended to help your code stay [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+
+## Here is a list of helper modules/methods Nested gives you:
+
+## 1 - Nested.Atomizer
+
+###The Problem
 
 You have a nested map (or a struct that you converted to a nested map) with keys that are not atoms and you want to convert those keys to atoms. Typically, I've had this issue with maps with string keys.
 
-## The Solution: NestedAtomizer
+### The Solution: Nested.Atomizer
 
 NestedAtomizer drills down into a nested map and converts keys which are not atoms into atoms.
 
