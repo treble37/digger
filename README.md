@@ -6,6 +6,10 @@ Nested is a collection of helpers to help you operate on nested maps (it will al
 
 This library is intended to help your code stay [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
+## Possible Future Work
+
+This library is a work in progress. I'm thinking about extending it to lists and/or tuples.
+
 ## Here is a list of helper modules/methods Nested gives you:
 
 ## 1 - Nested.Atomizer

@@ -7,13 +7,12 @@ defmodule Nested.AtomizerTest do
     assert Nested.Atomizer.atomize(stringified_map) == %{%{:c => 4, :d => 5} => 6, :a => 2, :b => 3}
   end
 
-  test "throws an error when atomizing a map with a struct key" do
+  test "does not atomize char lists, lists, or structs like date" do
     date = %Date{year: 2017, month: 3, day: 17}
-    stringified_map = %{%{"e" => 4, :f => 5} => 6, "a" => 2,
-                        %{"c" => 3, "d" => 4, date => 1} => 7}
-    assert_raise Protocol.UndefinedError, ~r/protocol Enumerable not implemented for/,
-      fn -> Nested.Atomizer.atomize(stringified_map)
-    end
+    stringified_map = %{%{"e" => 4, :f => 5} => 6, [1, 2] => 2,
+                        %{"c" => 3, 'ab' => 4, date => 1} => 7}
+    assert Nested.Atomizer.atomize(stringified_map) == %{%{:e => 4, :f => 5} => 6, [1, 2] => 2,
+                                                         %{:c => 3, 'ab' => 4, date => 1} => 7}
   end
 
   test "can atomize the empty string, as needed" do

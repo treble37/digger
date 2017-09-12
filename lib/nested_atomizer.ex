@@ -17,6 +17,8 @@ defmodule Nested.Atomizer do
 
   defp atomize_value(value), do: value
 
+  defp atomize_key(%_{} = struct), do: struct
+
   defp atomize_key(key) when is_map(key) do
     atomize(key)
   end
