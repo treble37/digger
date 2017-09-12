@@ -3,16 +3,6 @@ defmodule NestedAtomizer do
   Documentation for NestedAtomizer.
   """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> NestedAtomizer.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def atomize(map) do
   end
 end
