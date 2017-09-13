@@ -11,7 +11,7 @@ defmodule Digger.Atomizer do
   Take a (nested) map and convert string and integer keys to atoms
   """
   @spec atomize(map) :: map
-  def atomize(map = %{}) do
+  def atomize(%{} = map) do
     map
     |> Enum.map(fn{key, value} -> {atomize_key(key), atomize_value(value)} end)
     |> Enum.into(%{})

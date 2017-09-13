@@ -1,5 +1,15 @@
 # Digger
 
+[![Build Status](https://travis-ci.org/treble37/digger.svg?branch=master)](https://travis-ci.org/treble37/digger)
+[![Code Climate](https://codeclimate.com/github/treble37/digger/badges/gpa.svg)](https://codeclimate.com/github/treble37/digger)
+[![Coverage Status](https://coveralls.io/repos/github/treble37/digger/badge.svg?branch=master)](https://coveralls.io/github/treble37/digger?branch=master)
+[![Hex.pm](https://img.shields.io/hexpm/v/digger.svg)](https://hex.pm/packages/digger)
+[![Hex.pm Downloads](https://img.shields.io/hexpm/dt/digger.svg)](https://hex.pm/packages/digger)
+[![Deps Status](https://beta.hexfaktor.org/badge/all/github/treble37/digger.svg)](https://beta.hexfaktor.org/github/treble37/digger)
+[![Inline docs](http://inch-ci.org/github/treble37/digger.svg?branch=master)](http://inch-ci.org/github/treble37/digger)
+[![GitHub stars](https://img.shields.io/github/stars/treble37/digger.svg)](https://github.com/treble37/digger/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/treble37/digger/master/LICENSE)
+
 ## Description
 
 Digger is a collection of helpers to help you operate on nested maps (it will also work on non-nested maps). Elixir gives you a great collection of map methods, but sometimes I find myself having to rewrite the same operations specifically for nested maps.
