@@ -30,7 +30,17 @@ You have a nested map (or a struct that you converted to a nested map) with keys
 
 ### The Solution: Digger.Atomizer
 
-Digger.Atomizer drills down into a nested map and converts keys which are not atoms into atoms.
+Digger.Atomizer drills down into a nested map and converts (most) keys which are not atoms into atoms.
+
+## 2 - Digger.Stringifier
+
+### The Problem
+
+You have a nested map (or a struct that you converted to a nested map) with keys that are atoms and you want to convert those keys to strings.
+
+### The Solution: Digger.Atomizer
+
+Digger.Atomizer drills down into a nested map and converts (most) keys which are not strings into strings.
 
 ## Installation
 
@@ -40,7 +50,7 @@ by adding `digger` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:digger, "~> 0.1.0"}
+    {:digger, "~> 0.2.0"}
   ]
 end
 ```
