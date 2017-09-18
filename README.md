@@ -38,9 +38,9 @@ Digger.Atomizer drills down into a nested map and converts (most) keys which are
 
 You have a nested map (or a struct that you converted to a nested map) with keys that are atoms and you want to convert those keys to strings.
 
-### The Solution: Digger.Atomizer
+### The Solution: Digger.Stringifier
 
-Digger.Atomizer drills down into a nested map and converts (most) keys which are not strings into strings.
+Digger.Stringifier drills down into a nested map and converts (most) keys which are not strings into strings.
 
 ## Installation
 
