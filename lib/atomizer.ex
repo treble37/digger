@@ -17,9 +17,6 @@ defmodule Digger.Atomizer do
     |> Enum.into(%{})
   end
 
-  @spec atomize(pseudo_map) :: pseudo_map
-  def atomize(pseudo_map), do: pseudo_map
-
   defp atomize_value(value) when is_map(value) do
     atomize(value)
   end

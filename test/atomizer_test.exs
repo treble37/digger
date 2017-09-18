@@ -16,8 +16,8 @@ defmodule Digger.AtomizerTest do
   end
 
   test "can atomize the empty string, as needed" do
-    stringified_map = %{%{"e" => 4, :f => "5"} => 6, "" => [1, 2]}
-    assert Digger.Atomizer.atomize(stringified_map) == %{%{:e => 4, :f => "5"} => 6, :"" => [1, 2]}
+    stringified_map = %{%{"e" => 4, :f => %{"g" => "5"}} => 6, "" => [1, 2]}
+    assert Digger.Atomizer.atomize(stringified_map) == %{%{:e => 4, :f => %{:g => "5"}} => 6, :"" => [1, 2]}
   end
 
   test "can atomize integers, as needed" do
