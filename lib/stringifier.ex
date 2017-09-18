@@ -17,9 +17,6 @@ defmodule Digger.Stringifier do
     |> Enum.into(%{})
   end
 
-  @spec stringify(pseudo_map) :: pseudo_map
-  def stringify(pseudo_map), do: pseudo_map
-
   defp stringify_value(value) when is_map(value) do
     stringify(value)
   end
