@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/treble37/digger.svg?branch=master)](https://travis-ci.org/treble37/digger)
 [![Code Climate](https://codeclimate.com/github/treble37/digger/badges/gpa.svg)](https://codeclimate.com/github/treble37/digger)
-[![Coverage Status](https://coveralls.io/repos/github/treble37/digger/badge.svg?branch=master)](https://coveralls.io/github/treble37/digger?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/treble37/digger/badge.svg)](https://coveralls.io/github/treble37/digger)
 [![Hex.pm](https://img.shields.io/hexpm/v/digger.svg)](https://hex.pm/packages/digger)
 [![Hex.pm Downloads](https://img.shields.io/hexpm/dt/digger.svg)](https://hex.pm/packages/digger)
 [![Deps Status](https://beta.hexfaktor.org/badge/all/github/treble37/digger.svg)](https://beta.hexfaktor.org/github/treble37/digger)
