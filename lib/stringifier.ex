@@ -13,8 +13,7 @@ defmodule Digger.Stringifier do
   @spec stringify(map) :: map
   def stringify(%{} = map) do
     map
-    |> Enum.map(fn{key, value} -> {stringify_key(key), stringify_value(value)} end)
-    |> Enum.into(%{})
+    |> Map.new(fn{key, value} -> {stringify_key(key), stringify_value(value)} end)
   end
 
   defp stringify_value(value) when is_map(value) do

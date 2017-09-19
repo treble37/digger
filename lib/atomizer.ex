@@ -13,8 +13,7 @@ defmodule Digger.Atomizer do
   @spec atomize(map) :: map
   def atomize(%{} = map) do
     map
-    |> Enum.map(fn{key, value} -> {atomize_key(key), atomize_value(value)} end)
-    |> Enum.into(%{})
+    |> Map.new(fn{key, value} -> {atomize_key(key), atomize_value(value)} end)
   end
 
   defp atomize_value(value) when is_map(value) do
