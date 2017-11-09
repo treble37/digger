@@ -6,5 +6,6 @@ defprotocol Digger.SnakeCaser.Protocol do
   @doc """
   Underscore the data type
   """
+  @fallback_to_any true
   def underscore(data_type)
 end
