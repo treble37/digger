@@ -8,13 +8,15 @@ defimpl Digger.CamelCaser.Protocol, for: BitString do
 
   defp uppercase_first(string, :upper) do
     remainder = String.slice(string, 1..-1)
-    String.first(string)
+    string
+    |> String.first
     |> String.capitalize
     |> Kernel.<>(remainder)
   end
   defp uppercase_first(string, _first_letter) do
     remainder = String.slice(string, 1..-1)
-    String.first(string)
+    string
+    |> String.first
     |> String.downcase
     |> Kernel.<>(remainder)
   end
