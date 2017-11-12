@@ -8,7 +8,8 @@ For more information about changelogs, check
 
 ## 0.4.0 - 11/12/17 Sun
 
-* [FEATURE] Module to camelize nested (and non-nested) map keys
+* [FEATURE] CamelCaser module to camelize nested (and non-nested) map keys
+* [FEATURE] UpperCase module to upcase the first letter of nested (and non-nested) map keys
 
 ## 0.3.0 - 11/9/17 Thurs
 
