@@ -10,6 +10,7 @@ For more information about changelogs, check
 
 * [FEATURE] CamelCaser module to camelize nested (and non-nested) map keys
 * [FEATURE] UpperCase module to upcase the first letter of nested (and non-nested) map keys
+* [FEATURE] LowerCase module to lowercase the first letter of nested (and non-nested) map keys
 
 ## 0.3.0 - 11/9/17 Thurs
 
