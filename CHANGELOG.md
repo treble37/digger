@@ -6,6 +6,13 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.4.0 - 11/12/17 Sun
+
+* [FEATURE] CamelCaser module to camelize nested (and non-nested) map keys
+* [FEATURE] UpperCase module to upcase the first letter of nested (and non-nested) map keys
+* [FEATURE] LowerCase module to lowercase the first letter of nested (and non-nested) map keys
+* [FEATURE] Dasher module to dasherize the underscored nested (and non-nested) map keys
+
 ## 0.3.0 - 11/9/17 Thurs
 
 * [FEATURE] Module to underscore nested (and non-nested) map keys
