@@ -3,9 +3,14 @@ defprotocol Digger.CamelCaser.Protocol do
   Documentation for Digger.CamelCaser
   """
 
+  @fallback_to_any true
+
+  alias Digger.Types
+
   @doc """
   Apply camel case to the data type
   """
-  @fallback_to_any true
+
+  @spec camelize(Types.data_type, Types.symbol) :: Types.valid_return_type
   def camelize(data_type, first_letter)
 end

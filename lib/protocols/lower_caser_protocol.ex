@@ -3,9 +3,14 @@ defprotocol Digger.LowerCaser.Protocol do
   This protocol defines the API for functions which take a valid Elixir data type as input.
   """
 
+  @fallback_to_any true
+
+  alias Digger.Types
+
   @doc """
   Lowercase first letter of the data type
   """
-  @fallback_to_any true
+
+  @spec lowercase_first(Types.data_type) :: Types.valid_return_type
   def lowercase_first(data_type)
 end
