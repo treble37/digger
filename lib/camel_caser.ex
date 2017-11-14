@@ -1,6 +1,6 @@
 defmodule Digger.CamelCaser do
   @moduledoc """
-  Documentation for Digger.SnakeCaser
+  Documentation for Digger.CamelCaser
   """
 
   alias Digger.CamelCaser.Delegator

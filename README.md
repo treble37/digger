@@ -42,6 +42,56 @@ You have a nested map (or a struct that you converted to a nested map) with keys
 
 Digger.Stringifier drills down into a nested map and converts (most) keys which are not strings into strings.
 
+## 3 - Digger.CamelCaser
+
+### The Problem
+
+You have a valid data type that needs to be camel-cased. This can be an atom, string, or nested map (or a struct that you converted to a nested map) with string or atom keys.
+
+### The Solution: Digger.CamelCaser
+
+Digger.CamelCaser "camel cases" your valid data type according to the rules defined by its protocol.
+
+## 4 - Digger.SnakeCaser
+
+### The Problem
+
+You have a valid data type that needs to be snake-cased. This can be an atom, string, or nested map (or a struct that you converted to a nested map) with string or atom keys.
+
+### The Solution: Digger.SnakeCaser
+
+Digger.SnakeCaser "snake cases" your valid data type according to the rules defined by its protocol.
+
+## 5 - Digger.Dasher
+
+### The Problem
+
+You have a valid data type that needs the underscores transformed to dashes. This can be a string, or nested map (or a struct that you converted to a nested map) with string keys.
+
+### The Solution: Digger.Dasher
+
+Digger.Dasher "dasherizes" your valid data type according to the rules defined by its protocol.
+
+## 5 - Digger.LowerCaser
+
+### The Problem
+
+You have a valid data type that needs the first letter to be lowercase. This can be a string or atom or nested map with string or atom keys.
+
+### The Solution: Digger.LowerCaser
+
+Digger.Dasher "lowercases" your valid data type according to the rules defined by its protocol.
+
+## 6 - Digger.UpperCaser
+
+### The Problem
+
+You have a valid data type that needs the first letter to be upper case. This can be a string or atom or nested map with string or atom keys.
+
+### The Solution: Digger.UpperCaser
+
+Digger.Dasher "upcases" your valid data type according to the rules defined by its protocol.
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
@@ -50,7 +100,7 @@ by adding `digger` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:digger, "~> 0.2.0"}
+    {:digger, "~> 0.4.0"}
   ]
 end
 ```
