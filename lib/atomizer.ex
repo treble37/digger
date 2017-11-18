@@ -3,6 +3,8 @@ defmodule Digger.Atomizer do
   Documentation for Digger.Atomizer.
   """
 
+  alias Digger.Atomizer.Delegator
+
   @type key :: any
   @type value :: any
   @type pseudo_map :: any
@@ -11,10 +13,11 @@ defmodule Digger.Atomizer do
   Take a (nested) map and convert string and integer keys to atoms
   """
   @spec atomize(map) :: map
-  def atomize(%{} = map) do
-    map
-    |> Map.new(fn{key, value} -> {atomize_key(key), atomize_value(value)} end)
-  end
+  def atomize(map), do: Delegator.atomize(map)
+#  def atomize(%{} = map) do
+#    map
+#    |> Map.new(fn{key, value} -> {atomize_key(key), atomize_value(value)} end)
+#  end
 
   defp atomize_value(value) when is_map(value) do
     atomize(value)
