@@ -6,6 +6,13 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.5.0 - 11/19/17 Sun
+
+* [ENHANCEMENT] Atomizer module updated to use protocols
+* [ENHANCEMENT] Stringifier module updated to use protocols
+* [ENHANCEMENT] Floating point keys are now handled by the various protocols
+  (see tests)
+
 ## 0.4.0 - 11/12/17 Sun
 
 * [FEATURE] CamelCaser module to camelize nested (and non-nested) map keys
