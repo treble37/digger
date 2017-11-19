@@ -26,7 +26,7 @@ This library is a work in progress. I'm thinking about extending it to lists and
 
 ### The Problem
 
-You have a nested map (or a struct that you converted to a nested map) with keys that are not atoms and you want to convert those keys to atoms. Typically, I've had this issue with maps with string keys.
+You have a valid data type that needs to be "atomized" This can be a string, number, or nested map with string keys.
 
 ### The Solution: Digger.Atomizer
 
@@ -37,6 +37,8 @@ Digger.Atomizer drills down into a nested map and converts (most) keys which are
 ### The Problem
 
 You have a nested map (or a struct that you converted to a nested map) with keys that are atoms and you want to convert those keys to strings.
+
+You have a valid data type that needs to be "stringified" This can be an atom, number, or nested map with atom keys.
 
 ### The Solution: Digger.Stringifier
 
@@ -72,7 +74,7 @@ You have a valid data type that needs the underscores transformed to dashes. Thi
 
 Digger.Dasher "dasherizes" your valid data type according to the rules defined by its protocol.
 
-## 5 - Digger.LowerCaser
+## 6 - Digger.LowerCaser
 
 ### The Problem
 
@@ -82,7 +84,7 @@ You have a valid data type that needs the first letter to be lowercase. This can
 
 Digger.Dasher "lowercases" your valid data type according to the rules defined by its protocol.
 
-## 6 - Digger.UpperCaser
+## 7 - Digger.UpperCaser
 
 ### The Problem
 
@@ -92,6 +94,10 @@ You have a valid data type that needs the first letter to be upper case. This ca
 
 Digger.Dasher "upcases" your valid data type according to the rules defined by its protocol.
 
+## Questions?
+
+The tests in the test folder show you the data types that are handled. The protocol implementations in lib/impl also show you the various data types are handled.
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
@@ -100,7 +106,7 @@ by adding `digger` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:digger, "~> 0.4.0"}
+    {:digger, "~> 0.5.0"}
   ]
 end
 ```
