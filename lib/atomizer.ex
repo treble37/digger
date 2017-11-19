@@ -12,8 +12,8 @@ defmodule Digger.Atomizer do
   @doc """
   Take a (nested) map and convert string and integer keys to atoms
   """
-  @spec atomize(map) :: map
-  def atomize(map), do: Delegator.atomize(map)
+  @spec atomize(map, Types.string_arg) :: map
+  def atomize(map, atomize \\ "atomize"), do: Delegator.atomize(map, atomize)
 #  def atomize(%{} = map) do
 #    map
 #    |> Map.new(fn{key, value} -> {atomize_key(key), atomize_value(value)} end)

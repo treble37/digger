@@ -1,3 +1,3 @@
 defimpl Digger.Atomizer.Protocol, for: Any do
-  def atomize(any), do: any
+  def atomize(any, _atomize), do: any
 end
