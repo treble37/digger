@@ -1,6 +1,6 @@
 defprotocol Digger.Stringifier.Protocol do
   @moduledoc """
-  Documentation for Digger.Stringifier
+  Documentation for Digger.Stringifier Protocol
   """
 
   @fallback_to_any true
@@ -8,7 +8,7 @@ defprotocol Digger.Stringifier.Protocol do
   alias Digger.Types
 
   @doc """
-  Atomize the data type
+  Stringify the data type
   """
 
   @spec stringify(Types.data_type, Types.string) :: Types.valid_return_type

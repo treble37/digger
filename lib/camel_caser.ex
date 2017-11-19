@@ -6,7 +6,7 @@ defmodule Digger.CamelCaser do
   alias Digger.CamelCaser.Delegator
 
   @doc """
-  Take a (nested) map and camel keys
+  Camel case a valid Types.data_type according to the protocol implementation
   """
   def camel_case(data_type, first_letter \\ :upper), do: Delegator.camelize(data_type, first_letter)
 end

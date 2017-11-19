@@ -6,7 +6,7 @@ defmodule Digger.SnakeCaser do
   alias Digger.SnakeCaser.Delegator
 
   @doc """
-  Take a (nested) map and underscore keys
+  Underscore a valid Types.data_type according to the protocol implementation
   """
   def snake_case(data_type), do: Delegator.underscore(data_type)
 end

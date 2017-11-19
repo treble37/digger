@@ -1,6 +1,6 @@
 defprotocol Digger.Atomizer.Protocol do
   @moduledoc """
-  Documentation for Digger.Atomizer
+  Documentation for Digger.Atomizer Protocol
   """
 
   @fallback_to_any true

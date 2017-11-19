@@ -6,7 +6,8 @@ defmodule Digger.UpperCaser do
   alias Digger.UpperCaser.Delegator
 
   @doc """
-  Take a (nested) map and underscore keys
+  Upper case the first letter of a valid Types.data_type according to
+  the protocol implementation
   """
   def upcase_first(data_type), do: Delegator.upcase_first(data_type)
 end

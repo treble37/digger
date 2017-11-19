@@ -6,7 +6,7 @@ defmodule Digger.LowerCaser do
   alias Digger.LowerCaser.Delegator
 
   @doc """
-  Take a (nested) map and lowercase first letter of key
+  Lower case a valid Types.data_type according to the protocol implementation
   """
   def lowercase_first(data_type), do: Delegator.lowercase_first(data_type)
 end

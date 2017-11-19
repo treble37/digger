@@ -1,6 +1,6 @@
 defprotocol Digger.CamelCaser.Protocol do
   @moduledoc """
-  Documentation for Digger.CamelCaser
+  Documentation for Digger.CamelCaser Protocol
   """
 
   @fallback_to_any true

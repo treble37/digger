@@ -1,6 +1,6 @@
 defprotocol Digger.SnakeCaser.Protocol do
   @moduledoc """
-  This protocol defines the API for functions which take a valid Elixir data type as input.
+  Documentation for Digger.SnakeCaser Protocol
   """
 
   @fallback_to_any true

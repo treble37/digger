@@ -10,7 +10,7 @@ defmodule Digger.Stringifier do
   @type pseudo_map :: any
 
   @doc """
-  Take a (nested) map and convert atom and integer keys to strings
+  'Stringify' a valid Types.data_type according to the protocol implementation
   """
 
   @spec stringify(map, Types.string_arg) :: map
