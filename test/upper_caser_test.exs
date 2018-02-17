@@ -1,6 +1,5 @@
 defmodule Digger.UpperCaserTest do
   use ExUnit.Case
-  doctest Digger.UpperCaser
 
   test "can upper case first letter of nested map atom keys" do
     stringified_map = %{:FooBar => 2, :snake_case => 3, %{:a_b_ba => 4, :area51 => 5} => 6, :c_bbda => 2}

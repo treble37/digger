@@ -1,6 +1,5 @@
 defmodule Digger.SnakeCaserTest do
   use ExUnit.Case
-  doctest Digger.SnakeCaser
 
   test "can snake case nested map atom keys" do
     stringified_map = %{:FooBar => 2, :snake_case => 3, %{:aBBa => 4, :Area51 => 5} => 6, :cBBDA => 2}

@@ -1,6 +1,5 @@
 defmodule Digger.StringifierTest do
   use ExUnit.Case
-  doctest Digger.Stringifier
 
   test "can stringify nested string keys" do
     atomized_map = %{:a => 2, :b => 3, %{:c => 4, :d => 5} => 6}

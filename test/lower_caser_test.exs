@@ -1,6 +1,5 @@
 defmodule Digger.LowerCaserTest do
   use ExUnit.Case
-  doctest Digger.LowerCaser
 
   test "can lower case first letter of nested map atom keys" do
     stringified_map = %{:FooBar => 2, :Snake_Case => 3, %{:Ab_ba => 4, :area51 => 5} => 6, :C_bbda => 2}
