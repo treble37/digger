@@ -1,10 +1,10 @@
-defimpl Digger.SnakeCaser.Protocol, for: Atom do
-  alias Digger.SnakeCaser.Delegator
+defimpl Digger.SnakeCaser, for: Atom do
+  alias Digger.SnakeCaser
 
-  def underscore(atom) do
+  def snake_case(atom) do
     atom
     |> to_string
-    |> Delegator.underscore
+    |> SnakeCaser.snake_case
     |> String.to_atom
   end
 end

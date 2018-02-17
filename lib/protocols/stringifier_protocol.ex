@@ -1,4 +1,4 @@
-defprotocol Digger.Stringifier.Protocol do
+defprotocol Digger.Stringifier do
   @moduledoc """
   Documentation for Digger.Stringifier Protocol
   """
@@ -8,9 +8,9 @@ defprotocol Digger.Stringifier.Protocol do
   alias Digger.Types
 
   @doc """
-  Stringify the data type
+  'Stringify' a valid Types.data_type according to the protocol implementation
   """
 
-  @spec stringify(Types.data_type, Types.string) :: Types.valid_return_type
-  def stringify(data_type, stringify)
+  @spec stringify(Types.data_type, Types.symbol) :: Types.valid_return_type
+  def stringify(data_type, stringify \\ :stringify)
 end

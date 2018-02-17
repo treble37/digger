@@ -1,4 +1,4 @@
-defprotocol Digger.Dasher.Protocol do
+defprotocol Digger.Dasher do
   @moduledoc """
   Documentation for Digger.Dasher Protocol
   """
@@ -8,7 +8,7 @@ defprotocol Digger.Dasher.Protocol do
   alias Digger.Types
 
   @doc """
-  Dasherize the data type
+  'Dasherize' a valid Types.data_type according to the protocol implementation
   """
 
   @spec dasherize(Types.data_type) :: Types.valid_return_type

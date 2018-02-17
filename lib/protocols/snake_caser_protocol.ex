@@ -1,4 +1,4 @@
-defprotocol Digger.SnakeCaser.Protocol do
+defprotocol Digger.SnakeCaser do
   @moduledoc """
   Documentation for Digger.SnakeCaser Protocol
   """
@@ -6,9 +6,9 @@ defprotocol Digger.SnakeCaser.Protocol do
   @fallback_to_any true
 
   @doc """
-  Underscore the data type
+  snake_case a valid Types.data_type according to the protocol implementation
   """
 
-  @spec underscore(Types.data_type) :: Types.valid_return_type
-  def underscore(data_type)
+  @spec snake_case(Types.data_type) :: Types.valid_return_type
+  def snake_case(data_type)
 end

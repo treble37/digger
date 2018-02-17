@@ -1,5 +1,5 @@
-defimpl Digger.SnakeCaser.Protocol, for: Any do
-  def underscore(any) do
+defimpl Digger.SnakeCaser, for: Any do
+  def snake_case(any) do
     any
   end
 end
