@@ -5,7 +5,7 @@ defmodule Digger.Mixfile do
     [
       app: :digger,
       version: "1.0.0",
-      elixir: ">= 1.3.0",
+      elixir: ">= 1.3.2",
       start_permanent: Mix.env == :prod,
       test_coverage: [tool: ExCoveralls],
       description: description(),

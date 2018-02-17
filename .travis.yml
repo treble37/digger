@@ -15,8 +15,6 @@ env:
 
 matrix:
   exclude:
-    - elixir: 1.3.0
-      otp_release: 20.0
     - elixir: 1.3.2
       otp_release: 20.0
 
