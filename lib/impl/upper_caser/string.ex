@@ -1,4 +1,4 @@
-defimpl Digger.UpperCaser.Protocol, for: BitString do
+defimpl Digger.UpperCaser, for: BitString do
   def upcase_first(string) do
     string
     |> uppercase_first(:upper)
