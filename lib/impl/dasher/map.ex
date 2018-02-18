@@ -1,8 +1,8 @@
-defimpl Digger.Dasher.Protocol, for: Map do
-  alias Digger.Dasher.Delegator
+defimpl Digger.Dasher, for: Map do
+  alias Digger.Dasher
 
   def dasherize(map) do
     map
-    |> Enum.reduce(%{}, fn({key, value}, acc) -> Map.merge(acc, %{Delegator.dasherize(key) => value}) end)
+    |> Enum.reduce(%{}, fn({key, value}, acc) -> Map.merge(acc, %{Dasher.dasherize(key) => value}) end)
   end
 end

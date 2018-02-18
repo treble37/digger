@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/treble37/digger.svg?branch=master)](https://travis-ci.org/treble37/digger)
 [![Code Climate](https://codeclimate.com/github/treble37/digger/badges/gpa.svg)](https://codeclimate.com/github/treble37/digger)
 [![Coverage Status](https://coveralls.io/repos/github/treble37/digger/badge.svg)](https://coveralls.io/github/treble37/digger)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/702151ab4712380d7d49/test_coverage)](https://codeclimate.com/github/treble37/digger/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/702151ab4712380d7d49/maintainability)](https://codeclimate.com/github/treble37/digger/maintainability)
 [![Hex.pm](https://img.shields.io/hexpm/v/digger.svg)](https://hex.pm/packages/digger)
 [![Hex.pm Downloads](https://img.shields.io/hexpm/dt/digger.svg)](https://hex.pm/packages/digger)
 [![Deps Status](https://beta.hexfaktor.org/badge/all/github/treble37/digger.svg)](https://beta.hexfaktor.org/github/treble37/digger)
@@ -106,7 +108,7 @@ by adding `digger` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:digger, "~> 0.5.0"}
+    {:digger, "~> 1.0.0"}
   ]
 end
 ```

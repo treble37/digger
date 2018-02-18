@@ -1,8 +1,8 @@
-defimpl Digger.SnakeCaser.Protocol, for: Map do
-  alias Digger.SnakeCaser.Delegator
+defimpl Digger.SnakeCaser, for: Map do
+  alias Digger.SnakeCaser
 
-  def underscore(map) do
+  def snake_case(map) do
     map
-    |> Enum.reduce(%{}, fn({key, value}, acc) -> Map.merge(acc, %{Delegator.underscore(key) => value}) end)
+    |> Enum.reduce(%{}, fn({key, value}, acc) -> Map.merge(acc, %{SnakeCaser.snake_case(key) => value}) end)
   end
 end

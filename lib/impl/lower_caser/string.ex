@@ -1,4 +1,4 @@
-defimpl Digger.LowerCaser.Protocol, for: BitString do
+defimpl Digger.LowerCaser, for: BitString do
   def lowercase_first(string) do
     string
     |> lower_first(:lower)

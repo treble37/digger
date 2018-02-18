@@ -1,10 +1,10 @@
-defimpl Digger.LowerCaser.Protocol, for: Atom do
-  alias Digger.LowerCaser.Delegator
+defimpl Digger.LowerCaser, for: Atom do
+  alias Digger.LowerCaser
 
   def lowercase_first(atom) do
     atom
     |> to_string
-    |> Delegator.lowercase_first
+    |> LowerCaser.lowercase_first
     |> String.to_atom
   end
 end

@@ -1,4 +1,4 @@
-defprotocol Digger.CamelCaser.Protocol do
+defprotocol Digger.CamelCaser do
   @moduledoc """
   Documentation for Digger.CamelCaser Protocol
   """
@@ -8,9 +8,9 @@ defprotocol Digger.CamelCaser.Protocol do
   alias Digger.Types
 
   @doc """
-  Apply camel case to the data type
+  Camel case a valid Types.data_type according to the protocol implementation
   """
 
-  @spec camelize(Types.data_type, Types.symbol) :: Types.valid_return_type
-  def camelize(data_type, first_letter)
+  @spec camel_case(Types.data_type, Types.symbol) :: Types.valid_return_type
+  def camel_case(data_type, first_letter \\ :upper)
 end

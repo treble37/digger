@@ -1,4 +1,4 @@
-defimpl Digger.Dasher.Protocol, for: Any do
+defimpl Digger.Dasher, for: Any do
   def dasherize(any) do
     any
   end

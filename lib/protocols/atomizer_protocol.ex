@@ -1,4 +1,4 @@
-defprotocol Digger.Atomizer.Protocol do
+defprotocol Digger.Atomizer do
   @moduledoc """
   Documentation for Digger.Atomizer Protocol
   """
@@ -8,9 +8,9 @@ defprotocol Digger.Atomizer.Protocol do
   alias Digger.Types
 
   @doc """
-  Atomize the data type
+  'Atomize' a valid Types.data_type according to the protocol implementation
   """
 
   @spec atomize(Types.data_type, Types.string) :: Types.valid_return_type
-  def atomize(data_type, atomize)
+  def atomize(data_type, atomize \\ :atomize)
 end

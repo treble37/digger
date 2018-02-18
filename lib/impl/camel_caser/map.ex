@@ -1,8 +1,8 @@
-defimpl Digger.CamelCaser.Protocol, for: Map do
-  alias Digger.CamelCaser.Delegator
+defimpl Digger.CamelCaser, for: Map do
+  alias Digger.CamelCaser
 
-  def camelize(map, first_letter) do
+  def camel_case(map, first_letter) do
     map
-    |> Enum.reduce(%{}, fn({key, value}, acc) -> Map.merge(acc, %{Delegator.camelize(key, first_letter) => value}) end)
+    |> Enum.reduce(%{}, fn({key, value}, acc) -> Map.merge(acc, %{CamelCaser.camel_case(key, first_letter) => value}) end)
   end
 end

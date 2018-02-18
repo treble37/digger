@@ -5,6 +5,5 @@ defmodule Digger.Types do
 
   @type data_type :: any()
   @type symbol :: atom()
-  @type string_arg :: String.t()
   @type valid_return_type :: any()
 end

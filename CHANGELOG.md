@@ -6,6 +6,11 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 1.0.0 - 2/17/18 Sat
+
+* [breaking change] Atomizer#atomize now expects a symbol :atomize instead of a string if you want to "atomize" a data type
+* [breaking change] Stringifier#stringify now expects a symobl :stringify instead of a string if you want to "stringify" a data type
+
 ## 0.5.0 - 11/19/17 Sun
 
 * [ENHANCEMENT] Atomizer module updated to use protocols

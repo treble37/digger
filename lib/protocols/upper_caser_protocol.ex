@@ -1,4 +1,4 @@
-defprotocol Digger.UpperCaser.Protocol do
+defprotocol Digger.UpperCaser do
   @moduledoc """
   Documentation for Digger.UpperCaser Protocol
   """
@@ -6,7 +6,8 @@ defprotocol Digger.UpperCaser.Protocol do
   @fallback_to_any true
 
   @doc """
-  Uppercase first letter of the data type
+  Upper case the first letter of a valid Types.data_type according to
+  the protocol implementation
   """
 
   @spec upcase_first(Types.data_type) :: Types.valid_return_type

@@ -1,4 +1,4 @@
-defimpl Digger.LowerCaser.Protocol, for: Any do
+defimpl Digger.LowerCaser, for: Any do
   def lowercase_first(any) do
     any
   end

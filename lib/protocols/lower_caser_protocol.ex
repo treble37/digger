@@ -1,4 +1,4 @@
-defprotocol Digger.LowerCaser.Protocol do
+defprotocol Digger.LowerCaser do
   @moduledoc """
   Documentation for Digger.LowerCaser Protocol
   """
@@ -8,7 +8,7 @@ defprotocol Digger.LowerCaser.Protocol do
   alias Digger.Types
 
   @doc """
-  Lowercase first letter of the data type
+  Lower case first letter of a valid Types.data_type according to the protocol implementation
   """
 
   @spec lowercase_first(Types.data_type) :: Types.valid_return_type
