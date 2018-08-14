@@ -4,11 +4,13 @@ elixir:
   - 1.3.2
   - 1.4.5
   - 1.5.1
-  - 1.6.1
+  - 1.6.6
+  - 1.7.2
 
 otp_release:
   - 19.3
   - 20.0
+  - 21.0
 
 env:
   - MIX_ENV=test
@@ -17,6 +19,12 @@ matrix:
   exclude:
     - elixir: 1.3.2
       otp_release: 20.0
+    - elixir: 1.3.2
+      otp_release: 21.0
+    - elixir: 1.4.5
+      otp_release: 21.0
+    - elixir: 1.5.1
+      otp_release: 21.0
 
 script: mix coveralls.travis
 
