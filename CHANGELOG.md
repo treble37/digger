@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 2.0.0 - 12/6/18 Thurs
+
+* [breaking change] - Atomizer module updated to apply #atomize to lists (including char lists).
+
 ## 1.0.0 - 2/17/18 Sat
 
 * [breaking change] Atomizer#atomize now expects a symbol :atomize instead of a string if you want to "atomize" a data type
