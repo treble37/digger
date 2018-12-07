@@ -9,6 +9,7 @@ For more information about changelogs, check
 ## 2.0.0 - 12/6/18 Thurs
 
 * [breaking change] - Atomizer module updated to apply #atomize to lists (including char lists).
+* [breaking change] - CamelCaser module updated to apply #camel_case to lists
 
 ## 1.0.0 - 2/17/18 Sat
 
