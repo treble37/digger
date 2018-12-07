@@ -11,6 +11,7 @@ For more information about changelogs, check
 * [breaking change] - Atomizer module updated to apply #atomize to lists (including char lists).
 * [breaking change] - CamelCaser module updated to apply #camel_case to lists
 * [breaking change] - Dasher module updated to apply #dasherize to lists
+* [breaking change] - LowerCaser module updated to apply #lowercase_first to lists
 
 ## 1.0.0 - 2/17/18 Sat
 
