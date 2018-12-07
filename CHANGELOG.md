@@ -13,6 +13,7 @@ For more information about changelogs, check
 * [breaking change] - Dasher module updated to apply #dasherize to lists
 * [breaking change] - LowerCaser module updated to apply #lowercase_first to lists
 * [breaking change] - SnakeCaser module updated to apply #snake_case to lists
+* [breaking change[ - Stringifier module updated to apply #stringify to lists
 
 ## 1.0.0 - 2/17/18 Sat
 
