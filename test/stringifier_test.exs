@@ -2,10 +2,10 @@ defmodule Digger.StringifierTest do
   use ExUnit.Case
 
   test "can stringify nested string keys" do
-    atomized_map = %{:a => 2, :b => 3, %{:c => 4, :d => 5} => 6}
+    atomized_map = %{:a => 2, :b => 3, %{:c => 4, :d => 5} => 6, :e => true}
 
     assert Digger.Stringifier.stringify(atomized_map) ==
-             %{%{"c" => 4, "d" => 5} => 6, "a" => 2, "b" => 3}
+             %{%{"c" => 4, "d" => 5} => 6, "a" => 2, "b" => 3, "e" => true}
   end
 
   test "does not stringify char lists, lists, or structs like date" do
