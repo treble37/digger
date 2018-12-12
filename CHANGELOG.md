@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 2.0.1 - 12/12/18 Wed
+
+* [BUG FIX] - Stringifier module updated to allow an atom not to be atomized, with respect to maps
+
 ## 2.0.0 - 12/6/18 Thurs
 
 * [breaking change] - Atomizer module updated to apply #atomize to lists (including char lists).
