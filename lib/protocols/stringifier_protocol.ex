@@ -14,6 +14,6 @@ defprotocol Digger.Stringifier do
   @spec stringify(Types.data_type(), keyword()) :: Types.valid_return_type()
   def stringify(
         data_type,
-        opts \\ [type: "key", stringify_key: true, stringify_value: false]
+        opts \\ [type: :key, stringify_key: true, stringify_value: false]
       )
 end

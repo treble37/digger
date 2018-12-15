@@ -1,10 +1,10 @@
 defimpl Digger.CamelCaser, for: Atom do
   alias Digger.CamelCaser
 
-  def camel_case(atom, first_letter) do
+  def camel_case(atom, opts) do
     atom
     |> to_string
-    |> CamelCaser.camel_case(first_letter)
-    |> String.to_atom
+    |> CamelCaser.camel_case(opts)
+    |> String.to_atom()
   end
 end

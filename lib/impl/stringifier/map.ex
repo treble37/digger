@@ -11,12 +11,12 @@ defimpl Digger.Stringifier, for: Map do
     |> Enum.reduce(%{}, fn {key, value}, acc ->
       Map.merge(acc, %{
         Stringifier.stringify(key,
-          type: "key",
+          type: :key,
           stringify_key: stringify_key,
           stringify_value: stringify_value
         ) =>
           Stringifier.stringify(value,
-            type: "value",
+            type: :value,
             stringify_key: stringify_key,
             stringify_value: stringify_value
           )

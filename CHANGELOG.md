@@ -8,7 +8,8 @@ For more information about changelogs, check
 
 ## 3.0.0 - 12/14/18 Fri
 
--   [breaking change] - Stringifier module API updated to allow maps nested within lists to have their keys "stringified".
+-   [breaking change] - Stringifier module API updated to allow maps nested within lists to have their keys (and values) "stringified".
+-   [breaking change] - CamelCaser module API updated to allow maps nested within lists to have their keys (and values) "camelized".
 
 ## 2.0.1 - 12/12/18 Wed
 
