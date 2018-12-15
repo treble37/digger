@@ -1,3 +1,3 @@
 defimpl Digger.Stringifier, for: Any do
-  def stringify(any, _stringify), do: any
+  def stringify(any, _), do: any
 end

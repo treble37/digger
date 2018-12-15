@@ -11,6 +11,9 @@ defprotocol Digger.Stringifier do
   'Stringify' a valid Types.data_type according to the protocol implementation
   """
 
-  @spec stringify(Types.data_type, Types.symbol) :: Types.valid_return_type
-  def stringify(data_type, stringify \\ :stringify)
+  @spec stringify(Types.data_type(), keyword()) :: Types.valid_return_type()
+  def stringify(
+        data_type,
+        opts \\ [type: "key", stringify_key: true, stringify_value: false]
+      )
 end
