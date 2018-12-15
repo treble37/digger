@@ -12,6 +12,16 @@ defmodule Digger.AtomizerTest do
              %{%{:c => 4, :d => 5} => 6, :a => 2, :b => 3}
   end
 
+  test "can atomize nested string values" do
+    stringified_map = %{"a" => 2, "b" => 3, %{"c" => 4, "d" => 5} => 6}
+
+    assert Digger.Atomizer.atomize(stringified_map,
+             type: :value,
+             atomize_key: false,
+             atomize_value: true
+           ) == %{"a" => :"2", "b" => :"3", %{"c" => :"4", "d" => :"5"} => :"6"}
+  end
+
   test "does not atomize structs like date", %{date: date} do
     stringified_map = %{
       %{"e" => 4, :f => 5} => 6,
@@ -42,7 +52,18 @@ defmodule Digger.AtomizerTest do
   end
 
   test "can atomize lists, as needed" do
-    nested_list = [1, 1.02, ["a", "b", ["c", "d"]]]
-    assert Digger.Atomizer.atomize(nested_list) == [:"1", :"1.02", [:a, :b, [:c, :d]]]
+    nested_list = [
+      1,
+      1.02,
+      ["a", "b", ["c", "d"]],
+      [%{"r_key" => [%{"y_key" => "banjo_guitar", "z" => [%{"a" => "b"}]}]}]
+    ]
+
+    assert Digger.Atomizer.atomize(nested_list) == [
+             :"1",
+             :"1.02",
+             [:a, :b, [:c, :d]],
+             [%{r_key: [%{y_key: "banjo_guitar", z: [%{a: "b"}]}]}]
+           ]
   end
 end
