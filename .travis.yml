@@ -26,7 +26,10 @@ matrix:
     - elixir: 1.5.1
       otp_release: 21.0
 
-script: mix coveralls.travis
+script:
+  - mix credo
+  - mix coveralls.travis
+  - mix test
 
 after_script:
   - MIX_ENV=docs mix deps.get
