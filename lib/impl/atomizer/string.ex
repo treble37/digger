@@ -1,13 +1,19 @@
 defimpl Digger.Atomizer, for: BitString do
-  def atomize(string, type: :key, atomize_key: true, atomize_value: _) do
+  alias Digger.Opts.Atomizer, as: Opts
+
+  def atomize(string, opts) do
+    atomicize(string, Opts.set_options(opts))
+  end
+
+  defp atomicize(string, type: :key, key_transform: :atomize, value_transform: _) do
     string
     |> String.to_atom()
   end
 
-  def atomize(string, type: :value, atomize_key: _, atomize_value: true) do
+  defp atomicize(string, type: :value, key_transform: _, value_transform: :atomize) do
     string
     |> String.to_atom()
   end
 
-  def atomize(string, _opts), do: string
+  defp atomicize(string, _opts), do: string
 end

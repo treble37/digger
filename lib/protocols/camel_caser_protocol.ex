@@ -14,6 +14,6 @@ defprotocol Digger.CamelCaser do
   @spec camel_case(Types.data_type(), keyword()) :: Types.valid_return_type()
   def camel_case(
         data_type,
-        opts \\ [type: :key, first_letter_key: :upper, first_letter_value: :none]
+        opts \\ [type: :key, key_transform: :upper, value_transform: :none]
       )
 end

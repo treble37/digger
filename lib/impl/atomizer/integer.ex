@@ -1,15 +1,21 @@
 defimpl Digger.Atomizer, for: Integer do
-  def atomize(integer, type: :key, atomize_key: true, atomize_value: _) do
+  alias Digger.Opts.Atomizer, as: Opts
+
+  def atomize(integer, opts) do
+    atomicize(integer, Opts.set_options(opts))
+  end
+
+  defp atomicize(integer, type: :key, key_transform: :atomize, value_transform: _) do
     integer
     |> to_atom()
   end
 
-  def atomize(integer, type: :value, atomize_key: _, atomize_value: true) do
+  defp atomicize(integer, type: :value, key_transform: _, value_transform: :atomize) do
     integer
-    |> to_atom
+    |> to_atom()
   end
 
-  def atomize(integer, _opts), do: integer
+  defp atomicize(integer, _opts), do: integer
 
   defp to_atom(integer) do
     integer

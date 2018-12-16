@@ -23,8 +23,8 @@ defmodule Digger.CamelCaserTest do
 
     assert Digger.CamelCaser.camel_case(stringified_map,
              type: :key,
-             first_letter_key: :lower,
-             first_letter_value: :none
+             key_transform: :lower,
+             value_transform: :none
            ) == %{:fooBar => 2, :snakeCase => 3, %{:aBBa => 4, :area51 => 5} => 6, :cBbda => 2}
   end
 
@@ -71,8 +71,8 @@ defmodule Digger.CamelCaserTest do
 
     assert Digger.CamelCaser.camel_case(list,
              type: :key,
-             first_letter_key: :lower,
-             first_letter_value: :none
+             key_transform: :lower,
+             value_transform: :none
            ) == [
              1,
              2,

@@ -1,9 +1,15 @@
 defimpl Digger.Stringifier, for: Integer do
-  def stringify(integer, type: :key, stringify_key: true, stringify_value: _),
+  alias Digger.Opts.Stringifier, as: Opts
+
+  def stringify(integer, opts) do
+    to_string(integer, Opts.set_options(opts))
+  end
+
+  defp to_string(integer, type: :key, key_transform: :stringify, value_transform: _),
     do: integer |> Integer.to_string()
 
-  def stringify(integer, type: :value, stringify_key: _, stringify_value: true),
+  defp to_string(integer, type: :value, key_transform: _, value_transform: :stringify),
     do: integer |> Integer.to_string()
 
-  def stringify(integer, _), do: integer
+  defp to_string(integer, _), do: integer
 end

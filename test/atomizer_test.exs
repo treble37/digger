@@ -17,8 +17,8 @@ defmodule Digger.AtomizerTest do
 
     assert Digger.Atomizer.atomize(stringified_map,
              type: :value,
-             atomize_key: false,
-             atomize_value: true
+             key_transform: :no_atomize,
+             value_transform: :atomize
            ) == %{"a" => :"2", "b" => :"3", %{"c" => :"4", "d" => :"5"} => :"6"}
   end
 
