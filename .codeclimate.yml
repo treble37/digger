@@ -1,4 +1,8 @@
-plugins:
+engines:
   credo:
     enabled: true
-    channel: "beta"
+    strict: true
+    all: true
+    #only: "warning"
+    #ignore: "readability"
+

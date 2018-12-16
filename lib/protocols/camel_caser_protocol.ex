@@ -11,6 +11,9 @@ defprotocol Digger.CamelCaser do
   Camel case a valid Types.data_type according to the protocol implementation
   """
 
-  @spec camel_case(Types.data_type, Types.symbol) :: Types.valid_return_type
-  def camel_case(data_type, first_letter \\ :upper)
+  @spec camel_case(Types.data_type(), keyword()) :: Types.valid_return_type()
+  def camel_case(
+        data_type,
+        opts \\ [type: :key, key_transform: :upper, value_transform: :none]
+      )
 end

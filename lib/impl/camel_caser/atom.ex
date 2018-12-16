@@ -1,10 +1,13 @@
 defimpl Digger.CamelCaser, for: Atom do
   alias Digger.CamelCaser
+  alias Digger.Opts.CamelCaser, as: Opts
 
-  def camel_case(atom, first_letter) do
+  def camel_case(atom, opts) do
+    opts = Opts.set_options(opts)
+
     atom
     |> to_string
-    |> CamelCaser.camel_case(first_letter)
-    |> String.to_atom
+    |> CamelCaser.camel_case(opts)
+    |> String.to_atom()
   end
 end

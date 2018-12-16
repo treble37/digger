@@ -51,4 +51,24 @@ defmodule Digger.UpperCaserTest do
              :Snake_case
            ]
   end
+
+  test "can upper case (nested) lists, as needed" do
+    list = [
+      "fooBar",
+      "snake-case",
+      ["a_b_ba", "area51 is cool"],
+      1,
+      :snake_case,
+      [%{"rKey" => [%{"ykey" => "banjo_guitar"}]}]
+    ]
+
+    assert Digger.UpperCaser.upcase_first(list) == [
+             "FooBar",
+             "Snake-case",
+             ["A_b_ba", "Area51 is cool"],
+             1,
+             :Snake_case,
+             [%{"RKey" => [%{"Ykey" => "banjo_guitar"}]}]
+           ]
+  end
 end

@@ -107,7 +107,7 @@ by adding `digger` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:digger, "~> 2.0.1"}
+    {:digger, "~> 3.0.0"}
   ]
 end
 ```

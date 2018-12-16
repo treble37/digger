@@ -1,11 +1,14 @@
 defimpl Digger.Stringifier, for: List do
   alias Digger.Stringifier
+  alias Digger.Opts.Stringifier, as: Opts
 
-  def stringify([], _stringify), do: []
+  def stringify([], _), do: []
 
-  def stringify([h | t], :stringify) do
-    [Stringifier.stringify(h, :stringify)] ++ Stringifier.stringify(t, :stringify)
+  def stringify(
+        [h | t],
+        opts
+      ) do
+    opts = Opts.set_options(opts)
+    [Stringifier.stringify(h, opts)] ++ Stringifier.stringify(t, opts)
   end
-
-  def stringify(list, _stringify), do: list
 end

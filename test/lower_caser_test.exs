@@ -52,4 +52,13 @@ defmodule Digger.LowerCaserTest do
              ["abba", "area51 Is Cool"]
            ]
   end
+
+  test "can lower case first letter of each (nested) list element, as needed" do
+    list = [["Abba", "Area51 Is Cool"], [%{"Rkey" => [%{"Ykey" => "Banjo_Guitar"}]}]]
+
+    assert Digger.LowerCaser.lowercase_first(list) == [
+             ["abba", "area51 Is Cool"],
+             [%{"rkey" => [%{"ykey" => "Banjo_Guitar"}]}]
+           ]
+  end
 end

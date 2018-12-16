@@ -1,11 +1,11 @@
 defimpl Digger.Atomizer, for: List do
   alias Digger.Atomizer
+  alias Digger.Opts.Atomizer, as: Opts
 
-  def atomize([], _atomize), do: []
+  def atomize([], _opts), do: []
 
-  def atomize([h | t], :atomize) do
-    [Atomizer.atomize(h, :atomize)] ++ Atomizer.atomize(t, :atomize)
+  def atomize([h | t], opts) do
+    opts = Opts.set_options(opts)
+    [Atomizer.atomize(h, opts)] ++ Atomizer.atomize(t, opts)
   end
-
-  def atomize(list, _atomize), do: list
 end

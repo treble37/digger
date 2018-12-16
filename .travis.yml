@@ -1,7 +1,6 @@
 language: elixir
 
 elixir:
-  - 1.3.2
   - 1.4.5
   - 1.5.1
   - 1.6.6
@@ -17,16 +16,15 @@ env:
 
 matrix:
   exclude:
-    - elixir: 1.3.2
-      otp_release: 20.0
-    - elixir: 1.3.2
-      otp_release: 21.0
     - elixir: 1.4.5
       otp_release: 21.0
     - elixir: 1.5.1
       otp_release: 21.0
 
-script: mix coveralls.travis
+script:
+  - mix credo
+  - mix coveralls.travis
+  - mix test
 
 after_script:
   - MIX_ENV=docs mix deps.get

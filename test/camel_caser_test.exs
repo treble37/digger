@@ -21,8 +21,11 @@ defmodule Digger.CamelCaserTest do
       :c_bbda => 2
     }
 
-    assert Digger.CamelCaser.camel_case(stringified_map, :lower) ==
-             %{:fooBar => 2, :snakeCase => 3, %{:aBBa => 4, :area51 => 5} => 6, :cBbda => 2}
+    assert Digger.CamelCaser.camel_case(stringified_map,
+             type: :key,
+             key_transform: :lower,
+             value_transform: :none
+           ) == %{:fooBar => 2, :snakeCase => 3, %{:aBBa => 4, :area51 => 5} => 6, :cBbda => 2}
   end
 
   test "can camel case nested map string keys" do
@@ -58,13 +61,23 @@ defmodule Digger.CamelCaserTest do
            ]
   end
 
-  test "can camel case lists with lowercase first letter, as needed" do
-    list = [1, 2, ['ab', "c", "a_b_ba", "area51", ["snake-case", "snake_case"]]]
+  test "can camel case lists with nested maps with lowercase first letter, as needed" do
+    list = [
+      1,
+      2,
+      ['ab', "c", "a_b_ba", "area51", ["snake-case", "snake_case"]],
+      [%{"r_key" => [%{"y_key" => "banjo_guitar"}]}]
+    ]
 
-    assert Digger.CamelCaser.camel_case(list, :lower) == [
+    assert Digger.CamelCaser.camel_case(list,
+             type: :key,
+             key_transform: :lower,
+             value_transform: :none
+           ) == [
              1,
              2,
-             ['ab', "c", "aBBa", "area51", ["snakeCase", "snakeCase"]]
+             ['ab', "c", "aBBa", "area51", ["snakeCase", "snakeCase"]],
+             [%{"rKey" => [%{"yKey" => "banjo_guitar"}]}]
            ]
   end
 end

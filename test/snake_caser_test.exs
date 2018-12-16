@@ -46,4 +46,22 @@ defmodule Digger.SnakeCaserTest do
              ["a_b_ba", "area51", "logout_session", "logout_session"]
            ]
   end
+
+  test "can snake case (nested) lists, as needed" do
+    list = [
+      [1, 2],
+      "FooBar",
+      "snake-case",
+      ["aBBa", "Area51", "logoutSession", "LogoutSession"],
+      [%{"rKey" => [%{"YKey" => "BanjoGuitar"}]}]
+    ]
+
+    assert Digger.SnakeCaser.snake_case(list) == [
+             [1, 2],
+             "foo_bar",
+             "snake_case",
+             ["a_b_ba", "area51", "logout_session", "logout_session"],
+             [%{"r_key" => [%{"y_key" => "BanjoGuitar"}]}]
+           ]
+  end
 end
