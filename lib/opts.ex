@@ -41,4 +41,56 @@ defmodule Digger.Opts do
       ]
     end
   end
+
+  defmodule Dasher do
+    @moduledoc """
+    A module to handle optional arguments for Dasher
+    """
+    def set_options(opts) do
+      [
+        type: Keyword.get(opts, :type, :key),
+        key_transform: Keyword.get(opts, :key_transform, :dasherize),
+        value_transform: Keyword.get(opts, :value_transform, :none)
+      ]
+    end
+  end
+
+  defmodule LowerCaser do
+    @moduledoc """
+    A module to handle optional arguments for LowerCaser
+    """
+    def set_options(opts) do
+      [
+        type: Keyword.get(opts, :type, :key),
+        key_transform: Keyword.get(opts, :key_transform, :lower),
+        value_transform: Keyword.get(opts, :value_transform, :none)
+      ]
+    end
+  end
+
+  defmodule SnakeCaser do
+    @moduledoc """
+    A module to handle optional arguments for SnakeCaser
+    """
+    def set_options(opts) do
+      [
+        type: Keyword.get(opts, :type, :key),
+        key_transform: Keyword.get(opts, :key_transform, :snake),
+        value_transform: Keyword.get(opts, :value_transform, :none)
+      ]
+    end
+  end
+
+  defmodule UpperCaser do
+    @moduledoc """
+    A module to handle optional arguments for SnakeCaser
+    """
+    def set_options(opts) do
+      [
+        type: Keyword.get(opts, :type, :key),
+        key_transform: Keyword.get(opts, :key_transform, :upper),
+        value_transform: Keyword.get(opts, :value_transform, :none)
+      ]
+    end
+  end
 end

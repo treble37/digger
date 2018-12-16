@@ -11,6 +11,10 @@ For more information about changelogs, check
 -   [breaking change] - Stringifier module API updated to allow maps nested within lists to have their keys (and values) "stringified".
 -   [breaking change] - CamelCaser module API updated to allow maps nested within lists to have their keys (and values) "camelized".
 -   [breaking change] - Atomizer module API updated to allow maps nested within lists to have their keys (and values) "atomized".
+-   [breaking change] - Dasher module API updated to allow maps nested within lists to have their keys (and values) "dasherized".
+-   [breaking change] - LowerCaser module API updated to allow maps nested within lists to have their keys (and values) "lower-cased first".
+-   [breaking change] - SnakeCaser module API updated to allow maps nested within lists to have their keys (and values) "snake-cased".
+-   [breaking change] - UpperCaser module API updated to allow maps nested within lists to have the first letter of keys (and values) upcased
 
 ## 2.0.1 - 12/12/18 Wed
 

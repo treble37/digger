@@ -10,6 +10,9 @@ defprotocol Digger.UpperCaser do
   the protocol implementation
   """
 
-  @spec upcase_first(Types.data_type) :: Types.valid_return_type
-  def upcase_first(data_type)
+  @spec upcase_first(Types.data_type(), keyword()) :: Types.valid_return_type()
+  def upcase_first(
+        data_type,
+        opts \\ [type: :key, key_transform: :upper, value_transform: :none]
+      )
 end

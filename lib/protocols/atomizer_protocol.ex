@@ -14,6 +14,6 @@ defprotocol Digger.Atomizer do
   @spec atomize(Types.data_type(), keyword()) :: Types.valid_return_type()
   def atomize(
         data_type,
-        opts \\ [type: :key, key_transform: :atomize, value_transform: :no_atomize]
+        opts \\ [type: :key, key_transform: :atomize, value_transform: :none]
       )
 end

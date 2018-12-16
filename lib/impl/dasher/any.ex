@@ -1,5 +1,3 @@
 defimpl Digger.Dasher, for: Any do
-  def dasherize(any) do
-    any
-  end
+  def dasherize(any, _opts), do: any
 end

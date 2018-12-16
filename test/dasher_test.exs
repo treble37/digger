@@ -20,7 +20,7 @@ defmodule Digger.DasherTest do
              %{"foo-Bar" => 2, "snake-case" => 3, %{"aB-Ba" => 4, "area51" => 5} => 6}
   end
 
-  test "does not dasherize char lists, integer lists, or structs like date in nested map" do
+  test "allows user not to dasherize char lists, integer lists, or structs like date in nested map" do
     date = %Date{year: 2017, month: 3, day: 17}
 
     stringified_map = %{
@@ -37,13 +37,20 @@ defmodule Digger.DasherTest do
   end
 
   test "does dasherize lists, as needed" do
-    list = ["foo_Bar", "snake_case", ["aB_Ba", "area51"], :foo_bar]
+    list = [
+      "foo_Bar",
+      "snake_case",
+      ["aB_Ba", "area51"],
+      :foo_bar,
+      [%{"r_key" => [%{"y_key" => "banjo_guitar"}]}]
+    ]
 
     assert Digger.Dasher.dasherize(list) == [
              "foo-Bar",
              "snake-case",
              ["aB-Ba", "area51"],
-             :foo_bar
+             :foo_bar,
+             [%{"r-key" => [%{"y-key" => "banjo_guitar"}]}]
            ]
   end
 end
