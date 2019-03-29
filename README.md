@@ -6,7 +6,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/702151ab4712380d7d49/maintainability)](https://codeclimate.com/github/treble37/digger/maintainability)
 [![Hex.pm](https://img.shields.io/hexpm/v/digger.svg)](https://hex.pm/packages/digger)
 [![Hex.pm Downloads](https://img.shields.io/hexpm/dt/digger.svg)](https://hex.pm/packages/digger)
-[![Deps Status](https://beta.hexfaktor.org/badge/all/github/treble37/digger.svg)](https://beta.hexfaktor.org/github/treble37/digger)
 [![Inline docs](http://inch-ci.org/github/treble37/digger.svg?branch=master)](http://inch-ci.org/github/treble37/digger)
 [![GitHub stars](https://img.shields.io/github/stars/treble37/digger.svg)](https://github.com/treble37/digger/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/treble37/digger/master/LICENSE)
