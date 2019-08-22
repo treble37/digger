@@ -9,14 +9,14 @@ defmodule Digger.SnakeCaserTest do
       :cBBDA => 2
     }
 
-    assert Digger.SnakeCaser.snake_case(stringified_map) ==
+    assert Digger.snake_case(stringified_map) ==
              %{:foo_bar => 2, :snake_case => 3, %{:a_b_ba => 4, :area51 => 5} => 6, :c_bbda => 2}
   end
 
   test "can snake case nested map string keys" do
     stringified_map = %{"FooBar" => 2, "snake-case" => 3, %{"aBBa" => 4, "Area51" => 5} => 6}
 
-    assert Digger.SnakeCaser.snake_case(stringified_map) ==
+    assert Digger.snake_case(stringified_map) ==
              %{"foo_bar" => 2, "snake_case" => 3, %{"a_b_ba" => 4, "area51" => 5} => 6}
   end
 
@@ -29,7 +29,7 @@ defmodule Digger.SnakeCaserTest do
       %{"c" => 3, 'aBBA' => 4, date => 1} => 7
     }
 
-    assert Digger.SnakeCaser.snake_case(stringified_map) == %{
+    assert Digger.snake_case(stringified_map) == %{
              %{"e" => 4, :f => 5} => 6,
              [1, 2] => 2,
              %{"c" => 3, 'aBBA' => 4, date => 1} => 7
@@ -39,7 +39,7 @@ defmodule Digger.SnakeCaserTest do
   test "can snake case lists, as needed" do
     list = [[1, 2], "FooBar", "snake-case", ["aBBa", "Area51", "logoutSession", "LogoutSession"]]
 
-    assert Digger.SnakeCaser.snake_case(list) == [
+    assert Digger.snake_case(list) == [
              [1, 2],
              "foo_bar",
              "snake_case",
@@ -56,7 +56,7 @@ defmodule Digger.SnakeCaserTest do
       [%{"rKey" => [%{"YKey" => "BanjoGuitar"}]}]
     ]
 
-    assert Digger.SnakeCaser.snake_case(list) == [
+    assert Digger.snake_case(list) == [
              [1, 2],
              "foo_bar",
              "snake_case",
