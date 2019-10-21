@@ -41,7 +41,7 @@ defmodule Digger.Mixfile do
   defp deps do
     [
       {:ex_doc, ">= 0.19.0", only: :dev},
-      {:excoveralls, "~> 0.11.2", only: :test},
+      {:excoveralls, "~> 0.12.0", only: :test},
       {:inch_ex, "~> 2.0.0", only: :docs},
       {:credo, "~> 1.1", only: [:dev, :test]}
     ]
