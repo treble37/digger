@@ -43,7 +43,7 @@ defmodule Digger.Mixfile do
       {:ex_doc, ">= 0.19.0", only: :dev},
       {:excoveralls, "~> 0.12.0", only: :test},
       {:inch_ex, "~> 2.0.0", only: :docs},
-      {:credo, "~> 1.1.5", only: [:dev, :test]}
+      {:credo, "~> 1.3.1", only: [:dev, :test]}
     ]
   end
 end
