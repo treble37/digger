@@ -5,6 +5,8 @@ defprotocol Digger.UpperCaser do
 
   @fallback_to_any true
 
+  alias Digger.Types
+
   @doc """
   Upper case the first letter of a valid Types.data_type according to
   the protocol implementation
