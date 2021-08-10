@@ -5,6 +5,8 @@ defprotocol Digger.SnakeCaser do
 
   @fallback_to_any true
 
+  alias Digger.Types
+   
   @doc """
   snake_case a valid Types.data_type according to the protocol implementation
   """
