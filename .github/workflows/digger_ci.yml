@@ -1,0 +1,43 @@
+name: Digger CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test-elixir:
+    name: Build and test
+    runs-on: ubuntu-latest
+    env:
+      FORCE_COLOR: 1
+    strategy:
+      fail-fast: false
+      matrix:
+        elixir: [1.12.x, 1.11.x, 1.10.x, 1.9.x, 1.8.x, 1.7.x]
+        include:
+          - elixir: 1.7.x
+            otp: 20.x
+          - elixir: 1.8.x
+            otp: 20.x
+          - elixir: 1.9.x
+            otp: 21.x
+          - elixir: 1.10.x
+            otp: 22.x
+          - elixir: 1.11.x
+            otp: 23.x
+          - elixir: 1.12.x
+            otp: 24.x
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Elixir
+      uses: erlef/setup-beam@v1
+      with:
+        otp-version: ${{ matrix.otp }}
+        elixir-version: ${{ matrix.elixir }}
+    - name: Install dependencies
+      run: mix deps.get --force
+    - name: Run tests
+      run: mix test
