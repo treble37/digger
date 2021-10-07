@@ -1,6 +1,6 @@
 # Digger
 
-[![Build Status](https://travis-ci.org/treble37/digger.svg?branch=master)](https://travis-ci.org/treble37/digger)
+![Build](https://github.com/treble37/digger/actions/workflows/digger_ci.yml/badge.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/treble37/digger/badge.svg)](https://coveralls.io/github/treble37/digger)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/702151ab4712380d7d49/test_coverage)](https://codeclimate.com/github/treble37/digger/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/702151ab4712380d7d49/maintainability)](https://codeclimate.com/github/treble37/digger/maintainability)
