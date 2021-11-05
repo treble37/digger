@@ -9,7 +9,7 @@ defmodule Digger.CamelCaserTest do
       :c_bbda => 2
     }
 
-    assert Digger.CamelCaser.camel_case(stringified_map) ==
+    assert Digger.camel_case(stringified_map) ==
              %{:FooBar => 2, :SnakeCase => 3, %{:ABBa => 4, :Area51 => 5} => 6, :CBbda => 2}
   end
 
@@ -21,7 +21,7 @@ defmodule Digger.CamelCaserTest do
       :c_bbda => 2
     }
 
-    assert Digger.CamelCaser.camel_case(stringified_map,
+    assert Digger.camel_case(stringified_map,
              type: :key,
              key_transform: :lower,
              value_transform: :none
@@ -31,7 +31,7 @@ defmodule Digger.CamelCaserTest do
   test "can camel case nested map string keys" do
     stringified_map = %{"FooBar" => 2, "snake-case" => 3, %{"a_b_ba" => 4, "area51" => 5} => 6}
 
-    assert Digger.CamelCaser.camel_case(stringified_map) ==
+    assert Digger.camel_case(stringified_map) ==
              %{"FooBar" => 2, "SnakeCase" => 3, %{"ABBa" => 4, "Area51" => 5} => 6}
   end
 
@@ -44,7 +44,7 @@ defmodule Digger.CamelCaserTest do
       %{"c" => 3, 'aBBA' => 4, date => 1} => 7
     }
 
-    assert Digger.CamelCaser.camel_case(stringified_map) == %{
+    assert Digger.camel_case(stringified_map) == %{
              %{"E" => 4, :F => 5} => 6,
              [1, 2] => 2,
              %{"C" => 3, 'aBBA' => 4, date => 1} => 7
@@ -54,7 +54,7 @@ defmodule Digger.CamelCaserTest do
   test "can camel case lists, as needed" do
     list = [1, 2, ['ab', "c", "a_b_ba", "area51", ["snake-case", "snake_case"]]]
 
-    assert Digger.CamelCaser.camel_case(list) == [
+    assert Digger.camel_case(list) == [
              1,
              2,
              ['ab', "C", "ABBa", "Area51", ["SnakeCase", "SnakeCase"]]
@@ -69,7 +69,7 @@ defmodule Digger.CamelCaserTest do
       [%{"r_key" => [%{"y_key" => "banjo_guitar"}]}]
     ]
 
-    assert Digger.CamelCaser.camel_case(list,
+    assert Digger.camel_case(list,
              type: :key,
              key_transform: :lower,
              value_transform: :none

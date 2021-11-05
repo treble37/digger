@@ -20,19 +20,19 @@ This library is intended to help your code stay [DRY](https://en.wikipedia.org/w
 
 This library is a work in progress. I'm thinking about extending it to lists and/or tuples.
 
-## Here is a list of helper modules/methods Digger gives you:
+## Here is a list of helper methods Digger gives you:
 
-## 1 - Digger.Atomizer
+## 1 - Digger.atomize/2
 
 ### The Problem
 
 You have a valid data type that needs to be "atomized" This can be a string, number, or nested map with string keys.
 
-### The Solution: Digger.Atomizer
+### The Solution
 
-Digger.Atomizer drills down into a nested map and converts (most) keys which are not atoms into atoms.
+Digger.atomize/2 drills down into a nested map and converts (most) keys which are not atoms into atoms.
 
-## 2 - Digger.Stringifier
+## 2 - Digger.stringify/2
 
 ### The Problem
 
@@ -40,59 +40,59 @@ You have a nested map (or a struct that you converted to a nested map) with keys
 
 You have a valid data type that needs to be "stringified" This can be an atom, number, or nested map with atom keys.
 
-### The Solution: Digger.Stringifier
+### The Solution
 
-Digger.Stringifier drills down into a nested map and converts (most) keys which are not strings into strings.
+Digger.stringify/2 drills down into a nested map and converts (most) keys which are not strings into strings.
 
-## 3 - Digger.CamelCaser
+## 3 - Digger.camel_case/2
 
 ### The Problem
 
 You have a valid data type that needs to be camel-cased. This can be an atom, string, or nested map (or a struct that you converted to a nested map) with string or atom keys.
 
-### The Solution: Digger.CamelCaser
+### The Solution
 
-Digger.CamelCaser "camel cases" your valid data type according to the rules defined by its protocol.
+Digger.camel_case/2 "camel cases" your valid data type according to the rules defined by its protocol.
 
-## 4 - Digger.SnakeCaser
+## 4 - Digger.snake_case/2
 
 ### The Problem
 
 You have a valid data type that needs to be snake-cased. This can be an atom, string, or nested map (or a struct that you converted to a nested map) with string or atom keys.
 
-### The Solution: Digger.SnakeCaser
+### The Solution
 
-Digger.SnakeCaser "snake cases" your valid data type according to the rules defined by its protocol.
+Digger.snake_case/2 "snake cases" your valid data type according to the rules defined by its protocol.
 
-## 5 - Digger.Dasher
+## 5 - Digger.dasher/2
 
 ### The Problem
 
 You have a valid data type that needs the underscores transformed to dashes. This can be a string, or nested map (or a struct that you converted to a nested map) with string keys.
 
-### The Solution: Digger.Dasher
+### The Solution
 
-Digger.Dasher "dasherizes" your valid data type according to the rules defined by its protocol.
+Digger.dasher/2 "dasherizes" your valid data type according to the rules defined by its protocol.
 
-## 6 - Digger.LowerCaser
+## 6 - Digger.lowercase_first/2
 
 ### The Problem
 
 You have a valid data type that needs the first letter to be lowercase. This can be a string or atom or nested map with string or atom keys.
 
-### The Solution: Digger.LowerCaser
+### The Solution
 
-Digger.Dasher "lowercases" your valid data type according to the rules defined by its protocol.
+Digger.lowercase_first/2 "lowercases" your valid data type according to the rules defined by its protocol.
 
-## 7 - Digger.UpperCaser
+## 7 - Digger.upcase_first/2
 
 ### The Problem
 
 You have a valid data type that needs the first letter to be upper case. This can be a string or atom or nested map with string or atom keys.
 
-### The Solution: Digger.UpperCaser
+### The Solution
 
-Digger.Dasher "upcases" your valid data type according to the rules defined by its protocol.
+Digger.upcase_first/2 "upcases" your valid data type according to the rules defined by its protocol.
 
 ## Questions?
 

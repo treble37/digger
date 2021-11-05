@@ -9,7 +9,7 @@ defmodule Digger.LowerCaserTest do
       :C_bbda => 2
     }
 
-    assert Digger.LowerCaser.lowercase_first(stringified_map) ==
+    assert Digger.lowercase_first(stringified_map) ==
              %{:fooBar => 2, :snake_Case => 3, %{:ab_ba => 4, :area51 => 5} => 6, :c_bbda => 2}
   end
 
@@ -20,7 +20,7 @@ defmodule Digger.LowerCaserTest do
       %{"Abba" => 4, "Area51 Is Cool" => 5} => 6
     }
 
-    assert Digger.LowerCaser.lowercase_first(stringified_map) ==
+    assert Digger.lowercase_first(stringified_map) ==
              %{"fooBar" => 2, "snake-case" => 3, %{"abba" => 4, "area51 Is Cool" => 5} => 6}
   end
 
@@ -33,7 +33,7 @@ defmodule Digger.LowerCaserTest do
       %{"C" => 3, 'ABBA' => 4, date => 1} => 7
     }
 
-    assert Digger.LowerCaser.lowercase_first(stringified_map) == %{
+    assert Digger.lowercase_first(stringified_map) == %{
              %{"e" => 4, :f => 5} => 6,
              [1, 2] => 2,
              %{"c" => 3, 'ABBA' => 4, date => 1} => 7
@@ -43,7 +43,7 @@ defmodule Digger.LowerCaserTest do
   test "can lower case first letter of each list element, as needed" do
     list = [1, 2, 'ABBA', "FooBar", "Snake-case", ["Abba", "Area51 Is Cool"]]
 
-    assert Digger.LowerCaser.lowercase_first(list) == [
+    assert Digger.lowercase_first(list) == [
              1,
              2,
              'ABBA',
@@ -56,7 +56,7 @@ defmodule Digger.LowerCaserTest do
   test "can lower case first letter of each (nested) list element, as needed" do
     list = [["Abba", "Area51 Is Cool"], [%{"Rkey" => [%{"Ykey" => "Banjo_Guitar"}]}]]
 
-    assert Digger.LowerCaser.lowercase_first(list) == [
+    assert Digger.lowercase_first(list) == [
              ["abba", "area51 Is Cool"],
              [%{"rkey" => [%{"ykey" => "Banjo_Guitar"}]}]
            ]
