@@ -5,7 +5,7 @@ defmodule Digger.Mixfile do
     [
       app: :digger,
       version: "3.0.0",
-      elixir: ">= 1.7.0",
+      elixir: ">= 1.9.0",
       start_permanent: Mix.env() == :prod,
       test_coverage: [tool: ExCoveralls],
       description: description(),
@@ -40,10 +40,10 @@ defmodule Digger.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_doc, ">= 0.25.1", only: :dev},
-      {:excoveralls, "~> 0.14.2", only: :test},
+      {:ex_doc, ">= 0.29.0", only: :dev},
+      {:excoveralls, "~> 0.15.0", only: :test},
       {:inch_ex, "~> 2.0.0", only: :docs},
-      {:credo, "~> 1.5.6", only: [:dev, :test]}
+      {:credo, "~> 1.6.7", only: [:dev, :test]}
     ]
   end
 end
