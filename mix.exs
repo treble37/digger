@@ -40,9 +40,8 @@ defmodule Digger.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_doc, ">= 0.29.0", only: :dev},
-      {:excoveralls, "~> 0.15.0", only: :test},
-      {:inch_ex, "~> 2.0.0", only: :docs},
+      {:ex_doc, ">= 0.30.6", only: :dev},
+      {:excoveralls, "~> 0.17.1", only: :test},
       {:credo, "~> 1.7.0", only: [:dev, :test]}
     ]
   end
