@@ -73,7 +73,7 @@ defimpl Digger, for: BitString do
   end
 
   defp uppercase_first_for_camelize(string, :upper) do
-    remainder = String.slice(string, 1..-1)
+    remainder = String.slice(string, 1..-1//-1)
 
     string
     |> String.first()
@@ -82,7 +82,7 @@ defimpl Digger, for: BitString do
   end
 
   defp uppercase_first_for_camelize(string, _first_letter) do
-    remainder = String.slice(string, 1..-1)
+    remainder = String.slice(string, 1..-1//-1)
 
     string
     |> String.first()
@@ -113,7 +113,7 @@ defimpl Digger, for: BitString do
   defp lower_first(string, _), do: string
 
   defp to_lower(string) do
-    remainder = String.slice(string, 1..-1)
+    remainder = String.slice(string, 1..-1//-1)
 
     string
     |> String.first()
@@ -143,7 +143,7 @@ defimpl Digger, for: BitString do
   # for upcase_first/2
 
   defp uppercase_first_for_upcase(string, type: :value, key_transform: _, value_transform: :upper) do
-    remainder = String.slice(string, 1..-1)
+    remainder = String.slice(string, 1..-1//-1)
 
     string
     |> String.first()
@@ -152,7 +152,7 @@ defimpl Digger, for: BitString do
   end
 
   defp uppercase_first_for_upcase(string, type: :key, key_transform: :upper, value_transform: _) do
-    remainder = String.slice(string, 1..-1)
+    remainder = String.slice(string, 1..-1//-1)
 
     string
     |> String.first()
