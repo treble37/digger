@@ -4,7 +4,7 @@ defmodule Digger.Mixfile do
   def project do
     [
       app: :digger,
-      version: "3.0.0",
+      version: "3.1.0",
       elixir: ">= 1.12.0",
       start_permanent: Mix.env() == :prod,
       test_coverage: [tool: ExCoveralls],

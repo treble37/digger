@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 3.1.0 - 7/5/26 Sun
+
+-   [ENHANCEMENT] Atomizer module now supports an `existing: true` option to atomize via `String.to_existing_atom/1` instead of `String.to_atom/1`, so atomizing untrusted/external input can no longer grow the atom table unbounded; strings with no matching atom pass through unchanged rather than raising or minting a new one. Default behavior is unchanged.
+
 ## 3.0.0 - 12/14/18 Fri
 
 -   [breaking change] - Stringifier module API updated to allow maps nested within lists to have their keys (and values) "stringified".
