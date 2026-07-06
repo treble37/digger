@@ -37,6 +37,9 @@ jobs:
           - pair:
               elixir: 1.19.x
               otp: 28.1.1
+          - pair:
+              elixir: 1.20.x
+              otp: 28.1.1
 
     steps:
     - uses: actions/checkout@v6
