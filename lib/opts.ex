@@ -11,7 +11,8 @@ defmodule Digger.Opts do
       [
         type: Keyword.get(opts, :type, :key),
         key_transform: Keyword.get(opts, :key_transform, :atomize),
-        value_transform: Keyword.get(opts, :value_transform, :no_atomize)
+        value_transform: Keyword.get(opts, :value_transform, :no_atomize),
+        existing: Keyword.get(opts, :existing, false)
       ]
     end
   end

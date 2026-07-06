@@ -66,4 +66,25 @@ defmodule Digger.AtomizerTest do
              [%{r_key: [%{y_key: "banjo_guitar", z: [%{a: "b"}]}]}]
            ]
   end
+
+  test "existing: true atomizes a string whose atom already exists" do
+    # :a is referenced elsewhere in this module, so it's already in the atom table.
+    assert Digger.atomize("a", existing: true) == :a
+  end
+
+  test "existing: true does not create a new atom for a novel string" do
+    novel_string = "digger_atomizer_test_definitely_novel_#{System.unique_integer([:positive])}"
+    count_before = :erlang.system_info(:atom_count)
+
+    assert Digger.atomize(novel_string, existing: true) == novel_string
+
+    assert :erlang.system_info(:atom_count) == count_before
+  end
+
+  test "existing: true is respected inside a nested map, leaving unknown string keys as-is" do
+    novel_string = "digger_atomizer_test_nested_novel_#{System.unique_integer([:positive])}"
+    stringified_map = %{"a" => 1, novel_string => 2}
+
+    assert Digger.atomize(stringified_map, existing: true) == %{:a => 1, novel_string => 2}
+  end
 end

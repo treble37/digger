@@ -27,18 +27,20 @@ defmodule Digger.Core do
     resolved = resolve_opts(operation, opts)
     key_transform = Keyword.get(resolved, :key_transform)
     value_transform = Keyword.get(resolved, :value_transform)
+    extra = Keyword.take(resolved, [:existing])
 
     Enum.reduce(map, %{}, fn {key, value}, acc ->
       new_key =
         apply(Digger, operation, [
           key,
-          [type: :key, key_transform: key_transform, value_transform: value_transform]
+          [type: :key, key_transform: key_transform, value_transform: value_transform] ++ extra
         ])
 
       new_value =
         apply(Digger, operation, [
           value,
-          [type: :value, key_transform: key_transform, value_transform: value_transform]
+          [type: :value, key_transform: key_transform, value_transform: value_transform] ++
+            extra
         ])
 
       Map.put(acc, new_key, new_value)
@@ -133,17 +135,26 @@ defmodule Digger.Core do
   def string(string, :upcase_first, opts),
     do: string_uppercase_first_for_upcase(string, UpperCaser.set_options(opts))
 
-  defp string_atomicize(string, type: :key, key_transform: :atomize, value_transform: _) do
-    string
-    |> String.to_atom()
+  defp string_atomicize(string, opts) do
+    type = Keyword.get(opts, :type)
+    key_transform = Keyword.get(opts, :key_transform)
+    value_transform = Keyword.get(opts, :value_transform)
+    existing = Keyword.get(opts, :existing, false)
+
+    cond do
+      type == :key and key_transform == :atomize -> to_atom(string, existing)
+      type == :value and value_transform == :atomize -> to_atom(string, existing)
+      true -> string
+    end
   end
 
-  defp string_atomicize(string, type: :value, key_transform: _, value_transform: :atomize) do
-    string
-    |> String.to_atom()
-  end
+  defp to_atom(string, false), do: String.to_atom(string)
 
-  defp string_atomicize(string, _opts), do: string
+  defp to_atom(string, true) do
+    String.to_existing_atom(string)
+  rescue
+    ArgumentError -> string
+  end
 
   defp string_camelize(string, type: :key, key_transform: :none, value_transform: _), do: string
 
@@ -276,19 +287,18 @@ defmodule Digger.Core do
   def float(float, :stringify, opts),
     do: numeric_stringify(float, Stringifier.set_options(opts), &Float.to_string/1)
 
-  defp numeric_atomize(number, type: :key, key_transform: :atomize, value_transform: _) do
-    number
-    |> to_string()
-    |> String.to_atom()
-  end
+  defp numeric_atomize(number, opts) do
+    type = Keyword.get(opts, :type)
+    key_transform = Keyword.get(opts, :key_transform)
+    value_transform = Keyword.get(opts, :value_transform)
+    existing = Keyword.get(opts, :existing, false)
 
-  defp numeric_atomize(number, type: :value, key_transform: _, value_transform: :atomize) do
-    number
-    |> to_string()
-    |> String.to_atom()
+    cond do
+      type == :key and key_transform == :atomize -> number |> to_string() |> to_atom(existing)
+      type == :value and value_transform == :atomize -> number |> to_string() |> to_atom(existing)
+      true -> number
+    end
   end
-
-  defp numeric_atomize(number, _opts), do: number
 
   defp numeric_stringify(
          number,

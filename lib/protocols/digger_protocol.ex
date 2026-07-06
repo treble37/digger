@@ -9,6 +9,16 @@ defprotocol Digger do
 
   @doc """
   'Atomize' a valid Types.data_type according to the protocol implementation
+
+  By default, atomizing a string that has no corresponding existing atom
+  creates a new one via `String.to_atom/1`, which is safe for trusted input
+  but can exhaust the atom table if used on untrusted/external data (atoms
+  are never garbage collected).
+
+  Pass `existing: true` to atomize via `String.to_existing_atom/1` instead:
+  strings that already have a matching atom are converted as usual, and
+  strings that don't are left as the original string rather than raising or
+  creating a new atom.
   """
 
   @spec atomize(Types.data_type(), keyword()) :: Types.valid_return_type()

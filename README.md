@@ -32,6 +32,21 @@ You have a valid data type that needs to be "atomized" This can be a string, num
 
 Digger.atomize/2 drills down into a nested map and converts (most) keys which are not atoms into atoms.
 
+### Safe atomize with `existing: true`
+
+By default, `Digger.atomize/2` creates a new atom for every string it doesn't
+already have an atom for. Atoms are never garbage collected, so calling
+`atomize` on untrusted/external input (e.g. a JSON payload from a client) can
+exhaust the atom table over time.
+
+Pass `existing: true` to only atomize strings that already have a matching
+atom, and leave anything else as the original string:
+
+```elixir
+Digger.atomize(%{"ok" => 1, "some_string_with_no_atom" => 2}, existing: true)
+# => %{ok: 1, "some_string_with_no_atom" => 2}
+```
+
 ## 2 - Digger.stringify/2
 
 ### The Problem
