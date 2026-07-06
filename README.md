@@ -18,7 +18,7 @@ This library is intended to help your code stay [DRY](https://en.wikipedia.org/w
 
 ## Possible Future Work
 
-This library is a work in progress. I'm thinking about extending it to lists and/or tuples.
+This library is a work in progress. Lists are already supported throughout; tuple support (e.g. transforming the payload inside `{:ok, _}`/`{:error, _}` while leaving the tag alone) is planned next.
 
 ## Here is a list of helper methods Digger gives you:
 
@@ -79,7 +79,7 @@ You have a valid data type that needs to be snake-cased. This can be an atom, st
 
 Digger.snake_case/2 "snake cases" your valid data type according to the rules defined by its protocol.
 
-## 5 - Digger.dasher/2
+## 5 - Digger.dasherize/2
 
 ### The Problem
 
@@ -87,7 +87,7 @@ You have a valid data type that needs the underscores transformed to dashes. Thi
 
 ### The Solution
 
-Digger.dasher/2 "dasherizes" your valid data type according to the rules defined by its protocol.
+Digger.dasherize/2 "dasherizes" your valid data type according to the rules defined by its protocol.
 
 ## 6 - Digger.lowercase_first/2
 
@@ -121,7 +121,7 @@ by adding `digger` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:digger, "~> 3.0.0"}
+    {:digger, "~> 3.1.0"}
   ]
 end
 ```
