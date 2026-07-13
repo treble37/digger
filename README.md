@@ -2,13 +2,11 @@
 
 ![Build](https://github.com/treble37/digger/actions/workflows/digger_ci.yml/badge.svg?branch=main)
 [![Coverage Status](https://coveralls.io/repos/github/treble37/digger/badge.svg)](https://coveralls.io/github/treble37/digger)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/702151ab4712380d7d49/test_coverage)](https://codeclimate.com/github/treble37/digger/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/702151ab4712380d7d49/maintainability)](https://codeclimate.com/github/treble37/digger/maintainability)
 [![Hex.pm](https://img.shields.io/hexpm/v/digger.svg)](https://hex.pm/packages/digger)
 [![Hex.pm Downloads](https://img.shields.io/hexpm/dt/digger.svg)](https://hex.pm/packages/digger)
-[![Inline docs](http://inch-ci.org/github/treble37/digger.svg?branch=master)](http://inch-ci.org/github/treble37/digger)
+[![Documentation](https://img.shields.io/badge/hex-docs-blue.svg)](https://hexdocs.pm/digger)
 [![GitHub stars](https://img.shields.io/github/stars/treble37/digger.svg)](https://github.com/treble37/digger/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/treble37/digger/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/treble37/digger/main/LICENSE)
 
 Digger transforms the keys — and, when you ask, the values — of
 arbitrarily nested Elixir maps: `atomize`, `stringify`, `camel_case`,

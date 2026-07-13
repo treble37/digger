@@ -39,7 +39,11 @@ defmodule Digger.Mixfile do
       files: ["lib", "mix.exs", "README*", "LICENSE*"],
       maintainers: ["Bruce Park"],
       licenses: ["MIT"],
-      links: %{"GitHub" => @source_url}
+      links: %{
+        "GitHub" => @source_url,
+        "Changelog" => "https://hexdocs.pm/digger/changelog.html",
+        "Docs" => "https://hexdocs.pm/digger"
+      }
     ]
   end
 
