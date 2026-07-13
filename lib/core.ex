@@ -176,7 +176,7 @@ defmodule Digger.Core do
   end
 
   defp string_uppercase_first_for_camelize(string, :upper) do
-    remainder = String.slice(string, 1..-1//-1)
+    remainder = String.slice(string, 1..-1//1)
 
     string
     |> String.first()
@@ -185,7 +185,7 @@ defmodule Digger.Core do
   end
 
   defp string_uppercase_first_for_camelize(string, _first_letter) do
-    remainder = String.slice(string, 1..-1//-1)
+    remainder = String.slice(string, 1..-1//1)
 
     string
     |> String.first()
@@ -214,7 +214,7 @@ defmodule Digger.Core do
   defp string_lower_first(string, _), do: string
 
   defp string_to_lower(string) do
-    remainder = String.slice(string, 1..-1//-1)
+    remainder = String.slice(string, 1..-1//1)
 
     string
     |> String.first()
@@ -246,7 +246,7 @@ defmodule Digger.Core do
          key_transform: _,
          value_transform: :upper
        ) do
-    remainder = String.slice(string, 1..-1//-1)
+    remainder = String.slice(string, 1..-1//1)
 
     string
     |> String.first()
@@ -260,7 +260,7 @@ defmodule Digger.Core do
          key_transform: :upper,
          value_transform: _
        ) do
-    remainder = String.slice(string, 1..-1//-1)
+    remainder = String.slice(string, 1..-1//1)
 
     string
     |> String.first()
