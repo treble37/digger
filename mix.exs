@@ -1,16 +1,36 @@
 defmodule Digger.Mixfile do
   use Mix.Project
 
+  @version "3.1.0"
+  @source_url "https://github.com/treble37/digger"
+
   def project do
     [
       app: :digger,
-      version: "3.1.0",
+      version: @version,
       elixir: ">= 1.12.0",
       start_permanent: Mix.env() == :prod,
       test_coverage: [tool: ExCoveralls],
       description: description(),
       package: package(),
-      deps: deps()
+      deps: deps(),
+      docs: docs()
+    ]
+  end
+
+  defp docs do
+    [
+      main: "readme",
+      source_url: @source_url,
+      source_ref: "v#{@version}",
+      extras: [
+        "README.md",
+        "CHANGELOG.md",
+        "guides/phoenix_js_bridge.md"
+      ],
+      groups_for_extras: [
+        Recipes: ~r{guides/}
+      ]
     ]
   end
 
@@ -19,7 +39,7 @@ defmodule Digger.Mixfile do
       files: ["lib", "mix.exs", "README*", "LICENSE*"],
       maintainers: ["Bruce Park"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/treble37/digger"}
+      links: %{"GitHub" => @source_url}
     ]
   end
 
