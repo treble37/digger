@@ -6,6 +6,13 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 3.1.1 - 7/12/26 Sun
+
+-   [BUG FIX] Fixed deprecated negative-step `String.slice/2` ranges in the internal camelize path (five call sites), which emitted a runtime deprecation warning on every `camel_case` call under Elixir 1.19+. Output is unchanged; a regression test now asserts `camel_case` writes nothing to stderr.
+-   [DOCS] hexdocs now renders the README as the landing page with the CHANGELOG and a new "Recipes" sidebar group (ex_doc `docs:` config was previously absent), including a Phoenix/JS camelCase↔snake_case bridge guide composed from existing functions.
+-   [DOCS] README rewritten to lead with the library's differentiators (zero runtime deps, atom-table-safe `atomize(existing: true)`, key *and* value transforms, calendar-struct passthrough) and a copy-paste bridge recipe; dead Inch CI / CodeClimate badges removed, hexdocs badge added.
+-   [DOCS] All seven protocol functions now carry `iex>` examples run as doctests on every test build; every example was verified against the library before being documented.
+
 ## 3.1.0 - 7/5/26 Sun
 
 -   [ENHANCEMENT] Atomizer module now supports an `existing: true` option to atomize via `String.to_existing_atom/1` instead of `String.to_atom/1`, so atomizing untrusted/external input can no longer grow the atom table unbounded; strings with no matching atom pass through unchanged rather than raising or minting a new one. Default behavior is unchanged.
