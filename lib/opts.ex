@@ -82,6 +82,17 @@ defmodule Digger.Opts do
     end
   end
 
+  defmodule Flattener do
+    @moduledoc """
+    A module to handle optional arguments for Flattener
+    """
+    def set_options(opts) do
+      [
+        separator: Keyword.get(opts, :separator, ".")
+      ]
+    end
+  end
+
   defmodule UpperCaser do
     @moduledoc """
     A module to handle optional arguments for SnakeCaser

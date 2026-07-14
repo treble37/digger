@@ -75,6 +75,28 @@ defprotocol Digger do
       )
 
   @doc """
+  Flatten a nested map into a single-level map whose keys are the
+  separator-joined paths (default separator `"."`) to each leaf value
+
+  Path keys are converted to strings with `to_string/1`, so keys must
+  implement `String.Chars` (atoms, strings, and numbers all do).
+  Structs (including calendar types like `Date`), lists, and empty maps
+  are leaf values — they are never descended into. Non-map input passes
+  through unchanged.
+
+  ## Examples
+
+      iex> Digger.flatten(%{a: %{b: 1}})
+      %{"a.b" => 1}
+
+      iex> Digger.flatten(%{"user" => %{"id" => 7}}, separator: "/")
+      %{"user/id" => 7}
+  """
+
+  @spec flatten(Types.data_type(), keyword()) :: Types.valid_return_type()
+  def flatten(data_type, opts \\ [separator: "."])
+
+  @doc """
   Lower case first letter of a valid Types.data_type according to the protocol implementation
 
   ## Examples
@@ -118,6 +140,29 @@ defprotocol Digger do
         data_type,
         opts \\ [type: :key, key_transform: :stringify, value_transform: :none]
       )
+
+  @doc """
+  Rebuild a nested map from a flattened one by splitting each string key
+  on the separator (default `"."`)
+
+  The exact inverse of `Digger.flatten/2` for the maps it produces:
+  `unflatten(flatten(map)) == map` whenever `map`'s keys are strings
+  that don't contain the separator. Maps with atom or number keys
+  round-trip to their string-keyed equivalent, since `flatten/2`
+  converts path keys to strings. Non-string keys are kept in place,
+  never split. Non-map input passes through unchanged.
+
+  ## Examples
+
+      iex> Digger.unflatten(%{"a.b" => 1, "a.c" => 2})
+      %{"a" => %{"b" => 1, "c" => 2}}
+
+      iex> Digger.unflatten(%{"user/id" => 7}, separator: "/")
+      %{"user" => %{"id" => 7}}
+  """
+
+  @spec unflatten(Types.data_type(), keyword()) :: Types.valid_return_type()
+  def unflatten(data_type, opts \\ [separator: "."])
 
   @doc """
   Upper case the first letter of a valid Types.data_type according to
