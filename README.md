@@ -41,6 +41,15 @@ Digger.atomize(%{"user" => %{"name" => "Ada", "roles" => ["admin"]}})
 - **Calendar structs are never touched.** `Date`, `DateTime`,
   `NaiveDateTime`, and `Time` values pass through every transform
   untouched — a guarantee covered by the test suite.
+- **Flatten and rebuild nested maps.** `Digger.flatten/2` collapses a
+  nested map into separator-joined paths (`%{"a.b" => 1}`) and
+  `Digger.unflatten/2` rebuilds the nesting — handy for query params,
+  ENV-style config keys, and log/CSV output:
+
+  ```elixir
+  %{user: %{address: %{city: "SF"}}} |> Digger.flatten()
+  #=> %{"user.address.city" => "SF"}
+  ```
 
 ## Installation
 
@@ -177,6 +186,52 @@ You have a valid data type that needs the first letter to be upper case. This ca
 ### The Solution
 
 Digger.upcase_first/2 "upcases" your valid data type according to the rules defined by its protocol.
+
+## 8 - Digger.flatten/2
+
+### The Problem
+
+You have a nested map and need a single-level map keyed by the full path
+to each value — for query params, ENV-style config keys, log fields, or
+CSV headers.
+
+### The Solution
+
+Digger.flatten/2 collapses the nesting into separator-joined string keys
+(default separator `"."`, configurable via `separator:`):
+
+```elixir
+Digger.flatten(%{user: %{address: %{city: "SF"}}, active: true})
+# => %{"user.address.city" => "SF", "active" => true}
+
+Digger.flatten(%{config: %{db: %{host: "localhost"}}}, separator: "__")
+# => %{"config__db__host" => "localhost"}
+```
+
+Path keys are converted to strings along the way. Structs (including
+calendar types), lists, and empty maps are treated as leaf values and are
+never descended into.
+
+## 9 - Digger.unflatten/2
+
+### The Problem
+
+You have a flattened map — separator-joined keys like `"user.address.city"`
+— and want the nested structure back.
+
+### The Solution
+
+Digger.unflatten/2 splits each string key on the separator (default `"."`)
+and rebuilds the nesting. It is the exact inverse of `Digger.flatten/2` for
+the maps flatten produces: `unflatten(flatten(map)) == map` whenever the
+map's keys are strings that don't contain the separator (maps with atom or
+number keys round-trip to their string-keyed equivalent, since flatten
+converts path keys to strings):
+
+```elixir
+Digger.unflatten(%{"user.address.city" => "SF", "active" => true})
+# => %{"user" => %{"address" => %{"city" => "SF"}}, "active" => true}
+```
 
 ## Possible Future Work
 
