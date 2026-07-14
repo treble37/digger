@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 3.2.0 - 7/14/26 Tue
+
+-   [ENHANCEMENT] New `Digger.flatten/2` collapses a nested map into a single-level map of separator-joined string paths (`%{a: %{b: 1}}` → `%{"a.b" => 1}`), and new `Digger.unflatten/2` rebuilds the nesting — the exact inverse for the maps `flatten` produces. The separator is configurable (`separator:`, default `"."`). Structs (calendar types included), lists, and empty maps are treated as leaf values and never descended into; non-map input passes through unchanged, like every other Digger operation.
+
 ## 3.1.1 - 7/12/26 Sun
 
 -   [BUG FIX] Fixed deprecated negative-step `String.slice/2` ranges in the internal camelize path (five call sites), which emitted a runtime deprecation warning on every `camel_case` call under Elixir 1.19+. Output is unchanged; a regression test now asserts `camel_case` writes nothing to stderr.
