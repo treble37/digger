@@ -70,7 +70,7 @@ Add `digger` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:digger, "~> 3.1"}
+    {:digger, "~> 3.3"}
   ]
 end
 ```

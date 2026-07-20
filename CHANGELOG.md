@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 3.3.0 - 7/19/26 Sun
+
+-   [ENHANCEMENT] Tagged 2-tuples (`{:ok, payload}` / `{:error, payload}` — any `{atom, payload}` shape) are now transformed by every Digger operation: the payload is transformed, the tag is left untouched, and tuples nested inside maps and lists are handled transparently. Any other tuple shape (3-tuples, non-atom first element, `{}`) passes through unchanged, consistent with the library's existing passthrough convention. `flatten`/`unflatten` treat all tuples as leaf values per their documented non-map contract.
+
 ## 3.2.0 - 7/14/26 Tue
 
 -   [ENHANCEMENT] New `Digger.flatten/2` collapses a nested map into a single-level map of separator-joined string paths (`%{a: %{b: 1}}` → `%{"a.b" => 1}`), and new `Digger.unflatten/2` rebuilds the nesting — the exact inverse for the maps `flatten` produces. The separator is configurable (`separator:`, default `"."`). Structs (calendar types included), lists, and empty maps are treated as leaf values and never descended into; non-map input passes through unchanged, like every other Digger operation.
