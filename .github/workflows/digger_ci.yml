@@ -60,3 +60,31 @@ jobs:
       run: mix deps.compile
     - name: Run tests
       run: mix test
+
+  coverage:
+    name: Coverage upload
+    runs-on: ubuntu-latest
+    env:
+      FORCE_COLOR: 1
+      MIX_ENV: test
+    steps:
+    - uses: actions/checkout@v6
+    - name: Set up Elixir
+      uses: erlef/setup-beam@v1
+      with:
+        otp-version: 28.1.1
+        elixir-version: 1.20.x
+    - name: Restore dependencies cache
+      uses: actions/cache@v5
+      with:
+        path: deps
+        key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}-28.1.1
+        restore-keys: ${{ runner.os }}-mix-
+    - name: Install dependencies
+      run: mix deps.get --only test
+    - name: Run tests with coverage
+      run: mix coveralls.json
+    - name: Upload to Coveralls
+      uses: coverallsapp/github-action@v2
+      with:
+        file: cover/excoveralls.json

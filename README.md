@@ -1,7 +1,7 @@
 # Digger
 
 ![Build](https://github.com/treble37/digger/actions/workflows/digger_ci.yml/badge.svg?branch=main)
-[![Coverage Status](https://coveralls.io/repos/github/treble37/digger/badge.svg)](https://coveralls.io/github/treble37/digger)
+[![Coverage Status](https://coveralls.io/repos/github/treble37/digger/badge.svg?branch=main)](https://coveralls.io/github/treble37/digger?branch=main)
 [![Hex.pm](https://img.shields.io/hexpm/v/digger.svg)](https://hex.pm/packages/digger)
 [![Hex.pm Downloads](https://img.shields.io/hexpm/dt/digger.svg)](https://hex.pm/packages/digger)
 [![Documentation](https://img.shields.io/badge/hex-docs-blue.svg)](https://hexdocs.pm/digger)
