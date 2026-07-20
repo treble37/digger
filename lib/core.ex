@@ -56,6 +56,14 @@ defmodule Digger.Core do
     [apply(Digger, operation, [head, resolved])] ++ apply(Digger, operation, [tail, resolved])
   end
 
+  # Tuple
+
+  def tuple({tag, payload}, operation, opts) when is_atom(tag) do
+    {tag, apply(Digger, operation, [payload, resolve_opts(operation, opts)])}
+  end
+
+  def tuple(tuple, _operation, _opts), do: tuple
+
   # Atom
 
   def atom(atom, :atomize, _opts), do: atom

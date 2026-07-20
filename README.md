@@ -38,6 +38,18 @@ Digger.atomize(%{"user" => %{"name" => "Ada", "roles" => ["admin"]}})
   #=> %{"config" => %{"mode" => "foo_bar"}}
   ```
 
+- **Tagged tuples work out of the box.** `{:ok, payload}` and
+  `{:error, payload}` shapes transform their payload while the tag stays
+  untouched, so API results pipe straight in — including tuples nested
+  inside maps and lists. Any other tuple shape (`{1, 2, 3}`, 3-tuples,
+  `{}`) passes through unchanged, and `flatten`/`unflatten` treat all
+  tuples as leaf values per their non-map contract:
+
+  ```elixir
+  Digger.camel_case({:ok, %{user_id: 1}})
+  #=> {:ok, %{UserId: 1}}
+  ```
+
 - **Calendar structs are never touched.** `Date`, `DateTime`,
   `NaiveDateTime`, and `Time` values pass through every transform
   untouched — a guarantee covered by the test suite.
